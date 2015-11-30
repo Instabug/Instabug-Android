@@ -1,7 +1,7 @@
 Instabug Sample
 ========
 
-An in-depth journey depicting all the ways to use [Instabug Android SDK][1]
+An in-depth journey depicting all the ways to use [Instabug Android SDK][1].
 
 For more information about Instabug check [our website][2].
 
