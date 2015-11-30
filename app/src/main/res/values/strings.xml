@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Instabug Sample</string>
+    <string name="hello_world">Hello Instabug world</string>
+</resources>
