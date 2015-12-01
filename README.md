@@ -8,8 +8,9 @@ For more information about Instabug check [our website][2].
 
 Usage
 --------
+It's as easy as "Get ready, Get set, Go".
 
-1. <b>Adding Instabug to your dependencies</b>
+1. <b>Adding Instabug to your dependencies</b> (Getting ready)
 
     Grab it via Gradle:
     ```groovy
@@ -24,7 +25,7 @@ Usage
     </dependency>
     ```
 
-1. <b>Initialising Instabug</b>
+1. <b>Initialising Instabug</b> (Getting set)
 
     In your `Application` class add the following:
     ```
@@ -39,7 +40,7 @@ Usage
             }
     ```
 
-1. <b>You're set</b>
+1. <b>Go!</b>
     
 For modifications and FAQs check the [wiki][wiki]
 
