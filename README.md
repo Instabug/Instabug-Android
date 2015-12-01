@@ -42,7 +42,7 @@ It's as easy as "Get ready, Get set, Go".
 
 1. <b>Go!</b>
     
-For modifications and FAQs check the [wiki][wiki]
+For technical documentation and FAQs check the [wiki][wiki]
 
 License
 =======
