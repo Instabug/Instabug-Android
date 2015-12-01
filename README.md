@@ -41,7 +41,7 @@ Usage
 
 1. <b>You're set</b>
     
-For Modifications and FAQs check the [wiki][wiki]
+For modifications and FAQs check the [wiki][wiki]
 
 License
 =======
