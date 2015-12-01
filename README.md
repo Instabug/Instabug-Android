@@ -39,9 +39,9 @@ Usage
             }
     ```
 
-Development SNAPSHOTs are available in [Sonatype's `snapshots` repository][snap].
-
-Instabug requires Android 2.3+ (10+)
+1. <b>You're set</b>
+    
+    With lots of modifications you can do that you can find in [this repositories wiki][wiki]
 
 License
 =======
@@ -63,4 +63,4 @@ License
 
  [1]: https://instabug.com/sdk-integration#android
  [2]: https://instabug.com/
- [snap]: https://oss.sonatype.org/content/repositories/snapshots/
+ [wiki]: https://github.com/Instabug/android-sample/wiki
