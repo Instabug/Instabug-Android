@@ -12,7 +12,7 @@ public class SampleApplication extends Application {
     public void onCreate() {
         super.onCreate();
         Instabug
-                .initialize(this, "cbeaee267486966ed22499bd554f8924")
+                .initialize(this, "f501f761142981d54b1fdea93963a934")
                 .setInvocationEvent(Instabug.IBGInvocationEvent.IBGInvocationEventShake)
                 .setEmailIsRequired(false);
     }
