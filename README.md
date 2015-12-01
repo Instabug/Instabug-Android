@@ -14,14 +14,14 @@ It's as easy as "Get ready, Get set, Go".
 
     Grab it via Gradle:
     ```groovy
-    compile 'com.instabug.library:instabugsupport:1.7'
+    compile 'com.instabug.library:instabugsupport:1.7.1'
     ```
     or via Maven: (if you're that kind of person :bowtie:)
     ```xml
     <dependency>
       <groupId>com.instabug.library</groupId>
       <artifactId>instabugsupport</artifactId>
-      <version>1.7</version>
+      <version>1.7.1</version>
     </dependency>
     ```
 
