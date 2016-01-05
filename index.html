@@ -19,7 +19,14 @@
     </section>
 
     <section class="main-content">
-      <h2>
+      <h1>
+<a id="instabug-sample" class="anchor" href="#instabug-sample" aria-hidden="true"><span class="octicon octicon-link"></span></a>Instabug Sample</h1>
+
+<p>An in-depth journey depicting all the ways to use <a href="https://instabug.com/sdk-integration#android">Instabug Android SDK</a>.</p>
+
+<p>For more information about Instabug check <a href="https://instabug.com/">our website</a>.</p>
+
+<h2>
 <a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
 
 <p>It's as easy as "Get ready, Get set, Go".</p>
@@ -30,14 +37,14 @@
 
 <p>Grab it via Gradle:</p>
 
-<div class="highlight highlight-source-groovy"><pre>compile <span class="pl-s"><span class="pl-pds">'</span>com.instabug.library:instabugsupport:1.7.1<span class="pl-pds">'</span></span></pre></div>
+<div class="highlight highlight-source-groovy"><pre>compile <span class="pl-s"><span class="pl-pds">'</span>com.instabug.library:instabugcompat:2.0-SNAPSHOT<span class="pl-pds">'</span></span></pre></div>
 
 <p>or via Maven: (if you're that kind of person <img class="emoji" title=":bowtie:" alt=":bowtie:" src="https://assets-cdn.github.com/images/icons/emoji/bowtie.png" height="20" width="20" align="absmiddle">)</p>
 
 <div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">dependency</span>&gt;
   &lt;<span class="pl-ent">groupId</span>&gt;com.instabug.library&lt;/<span class="pl-ent">groupId</span>&gt;
-  &lt;<span class="pl-ent">artifactId</span>&gt;instabugsupport&lt;/<span class="pl-ent">artifactId</span>&gt;
-  &lt;<span class="pl-ent">version</span>&gt;1.7.1&lt;/<span class="pl-ent">version</span>&gt;
+  &lt;<span class="pl-ent">artifactId</span>&gt;instabugcompat&lt;/<span class="pl-ent">artifactId</span>&gt;
+  &lt;<span class="pl-ent">version</span>&gt;2.0-SNAPSHOT&lt;/<span class="pl-ent">version</span>&gt;
 &lt;/<span class="pl-ent">dependency</span>&gt;</pre></div>
 </li>
 <li>
@@ -49,9 +56,8 @@
         public void onCreate() {
             super.onCreate();
             // ...
-            Instabug
-                    .initialize(this, "&lt;yourAppToken&gt;")
-                    .setInvocationEvent(Instabug.IBGInvocationEvent.IBGInvocationEventShake);
+            new Instabug.Builder(this, "&lt;yourAppToken&gt;")
+                    .build();
             // ...
         }
 </code></pre>
