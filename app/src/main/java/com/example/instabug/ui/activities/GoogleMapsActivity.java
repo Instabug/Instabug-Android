@@ -49,7 +49,8 @@ public class GoogleMapsActivity extends AppCompatActivity {
             // Try to obtain the map from the SupportMapFragment.
             mMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map))
                     .getMap();
-            Instabug.getInstance().addMapView(getSupportFragmentManager().findFragmentById(R.id.map).getView(), mMap);
+            // TODO add this so that instabug recognizes you have a map and show it in the screenshot
+            Instabug.addMapView(getSupportFragmentManager().findFragmentById(R.id.map).getView(), mMap);
 
             // Check if we were successful in obtaining the map.
             if (mMap != null) {

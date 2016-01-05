@@ -36,7 +36,8 @@ public class OpenGLActivity extends ActionBarActivity {
         // Create a GLSurfaceView instance and set it
         // as the ContentView for this Activity
         mGLView = new MyGLSurfaceView(this);
-        Instabug.getInstance().setGLSurfaceView(mGLView);
+        // TODO add this so that instabug recognizes you have an OpenGL surface and show it in the screenshot
+        Instabug.setGLSurfaceView(mGLView);
         mainLayout.addView(mGLView, 0);
     }
 

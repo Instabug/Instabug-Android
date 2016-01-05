@@ -1,5 +1,7 @@
 package com.example.instabug.ui.activities;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -16,7 +18,7 @@ import android.widget.Toast;
 
 import com.example.instabug.R;
 import com.instabug.library.Instabug;
-import com.instabug.wrapper.support.activity.InstabugActionBarActivity;
+import com.instabug.library.compat.InstabugActionBarActivity;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -27,10 +29,8 @@ public class MainActivity extends InstabugActionBarActivity
 
     @Bind(R.id.drawer_layout)
     DrawerLayout drawer;
-
     @Bind(R.id.nav_view)
     NavigationView navigationView;
-
     ImageView headerImage;
 
     @Override
@@ -63,7 +63,7 @@ public class MainActivity extends InstabugActionBarActivity
 
     @OnClick(R.id.feedback_fab)
     public void onFeedbackFABClicked() {
-        Instabug.getInstance().invoke();
+        Instabug.invoke();
     }
 
     public void onHeaderImageClicked() {
@@ -82,40 +82,37 @@ public class MainActivity extends InstabugActionBarActivity
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_activity, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-        if (id == R.id.action_settings) {
-            Intent settingsIntent = new Intent(this, SettingsActivity.class);
-            startActivity(settingsIntent);
-            return true;
-        }
-
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         int id = item.getItemId();
-
         if (id == R.id.nav_home) {
-            // Home
+            AlertDialog alertDialog = new AlertDialog.Builder(this)
+                    .setMessage("Do you want to get a NullPointerException, because that's how " +
+                            "you get a NullPointerException :D")
+                    .setPositiveButton("Why not?", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            throw new NullPointerException("Test issue in Instabug Sample app");
+                        }
+                    }).show();
+            Instabug.setDialog(alertDialog);
         } else if (id == R.id.nav_maps) {
-            startActivity(new Intent(MainActivity.this, GoogleMapsActivity.class));
+            startActivity(new Intent(this, GoogleMapsActivity.class));
         } else if (id == R.id.nav_openGl) {
-            startActivity(new Intent(MainActivity.this, OpenGLActivity.class));
-        } else if (id == R.id.nav_tab_host) {
-            startActivity(new Intent(MainActivity.this, TabHostActivity.class));
+            startActivity(new Intent(this, OpenGLActivity.class));
         } else if (id == R.id.nav_share) {
             startActivity(Intent.createChooser(getShareIntent(), getResources().getString(R.string.share_to_friends)));
         } else if (id == R.id.nav_about) {
-            Toast.makeText(MainActivity.this, "Coming soon", Toast.LENGTH_SHORT).show();
+            // TODO click about to show dialog to test screenshot with dialogs
+            Toast.makeText(this, "Coming soon", Toast.LENGTH_SHORT).show();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

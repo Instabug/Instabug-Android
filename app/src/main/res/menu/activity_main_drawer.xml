@@ -14,10 +14,6 @@
             android:id="@+id/nav_openGl"
             android:icon="@drawable/ic_menu_opengl"
             android:title="@string/opengl"/>
-        <item
-            android:id="@+id/nav_tab_host"
-            android:icon="@drawable/ic_menu_tabs"
-            android:title="@string/tabs"/>
     </group>
 
     <item android:title="@string/get_social">
