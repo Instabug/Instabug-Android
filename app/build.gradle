@@ -32,10 +32,11 @@ dependencies {
     compile 'com.jakewharton:butterknife:7.0.1'
     compile 'com.android.support:design:23.1.1'
     compile 'com.android.support:appcompat-v7:23.1.1'
-    compile 'com.google.android.gms:play-services:8.3.0'
-    compile('com.instabug.library:instabugcompat:2.0-SNAPSHOT') {
+    // TODO if you use a lower version than 8.4.0 you should uncomment the exclude line to avoid errors
+    compile 'com.google.android.gms:play-services:8.4.0'
+    compile('com.instabug.library:instabugcompat:2.0.1') {
         exclude module: 'appcompat-v7'
-        // if you're facing compilation issue in build.gradle about gms different versions
-        exclude group: 'com.google.android.gms'
+        // TODO uncomment next line if you're facing compilation issue in build.gradle about gms different versions
+//        exclude group: 'com.google.android.gms'
     }
 }

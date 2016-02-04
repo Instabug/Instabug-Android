@@ -9,6 +9,7 @@ import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -18,13 +19,12 @@ import android.widget.Toast;
 
 import com.example.instabug.R;
 import com.instabug.library.Instabug;
-import com.instabug.library.compat.InstabugActionBarActivity;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MainActivity extends InstabugActionBarActivity
+public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Bind(R.id.drawer_layout)
