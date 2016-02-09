@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.example.instabug.R;
+import com.example.instabug.ui.views.CustomGoogleMap;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
@@ -13,6 +14,7 @@ import com.instabug.library.Instabug;
 public class GoogleMapsActivity extends AppCompatActivity {
 
     private GoogleMap mMap; // Might be null if Google Play services APK is not available.
+    private CustomGoogleMap customGoogleMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,15 +44,15 @@ public class GoogleMapsActivity extends AppCompatActivity {
      * stopped or paused), {@link #onCreate(Bundle)} may not be called again so we should call this
      * method in {@link #onResume()} to guarantee that it will be called.
      */
-
     private void setUpMapIfNeeded() {
         // Do a null check to confirm that we have not already instantiated the map.
         if (mMap == null) {
             // Try to obtain the map from the SupportMapFragment.
             mMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map))
                     .getMap();
+            customGoogleMap = new CustomGoogleMap(getSupportFragmentManager().findFragmentById(R.id.map).getView(), mMap);
             // TODO add this so that instabug recognizes you have a map and show it in the screenshot
-            Instabug.addMapView(getSupportFragmentManager().findFragmentById(R.id.map).getView(), mMap);
+            Instabug.addCapturableView(customGoogleMap);
 
             // Check if we were successful in obtaining the map.
             if (mMap != null) {
@@ -65,9 +67,7 @@ public class GoogleMapsActivity extends AppCompatActivity {
      * <p/>
      * This should only be called once and when we are sure that {@link #mMap} is not null.
      */
-
     private void setUpMap() {
         mMap.addMarker(new MarkerOptions().position(new LatLng(0, 0)).title("Marker"));
     }
-
 }

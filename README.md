@@ -28,22 +28,22 @@ Using Instabug is as easy as "Get ready, Get set, Go".
 
     Grab your desired flavour via Gradle:
     ```groovy
-        compile 'com.instabug.library:instabug:2.0'
+        compile 'com.instabug.library:instabug:2.1'
     ```
     or
     ```groovy
-        compile 'com.instabug.library:instabugcompat:2.0'
+        compile 'com.instabug.library:instabugcompat:2.1'
     ```
     or
     ```groovy
-        compile 'com.instabug.library:instabugabs:2.0'
+        compile 'com.instabug.library:instabugabs:2.1'
     ```
     or via Maven: (if you're that kind of person :bowtie:)
     ```xml
         <dependency>
           <groupId>com.instabug.library</groupId>
           <artifactId>instabug</artifactId>
-          <version>2.0</version>
+          <version>2.1</version>
         </dependency>
     ```
     or 
@@ -51,7 +51,7 @@ Using Instabug is as easy as "Get ready, Get set, Go".
         <dependency>
           <groupId>com.instabug.library</groupId>
           <artifactId>instabugcompat</artifactId>
-          <version>2.0</version>
+          <version>2.1</version>
         </dependency>
     ```
     or
@@ -59,7 +59,7 @@ Using Instabug is as easy as "Get ready, Get set, Go".
         <dependency>
           <groupId>com.instabug.library</groupId>
           <artifactId>instabugabs</artifactId>
-          <version>2.0</version>
+          <version>2.1</version>
         </dependency>
     ```
 
