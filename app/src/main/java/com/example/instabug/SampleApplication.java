@@ -1,6 +1,7 @@
 package com.example.instabug;
 
 import android.app.Application;
+import android.support.multidex.MultiDex;
 
 import com.instabug.library.IBGColorTheme;
 import com.instabug.library.IBGInvocationEvent;
@@ -13,6 +14,7 @@ public class SampleApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        MultiDex.install(this);
         new Instabug.Builder(this, "f501f761142981d54b1fdea93963a934")
                 .setDebugEnabled(true)
                 .setEmailFieldRequired(false)
