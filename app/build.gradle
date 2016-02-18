@@ -37,11 +37,11 @@ dependencies {
     // TODO if you use a lower version than 8.4.0 you should uncomment the exclude line to avoid errors
     compile 'com.google.android.gms:play-services:8.4.0'
     // TODO add the following 2 lines if you exclude io.reactivex from Instabug
-    compile 'io.reactivex:rxjava:1.0.13'
-    compile 'io.reactivex:rxandroid:1.0.1'
-    compile('com.instabug.library:instabug:2.1.1') {
-        // TODO uncomment these 2 lines to exclude RxJava from Instabug and use your own version
-        exclude group: 'io.reactivex'
+//    compile 'io.reactivex:rxjava:1.0.13'
+//    compile 'io.reactivex:rxandroid:1.0.1'
+    compile('com.instabug.library:instabug:2.2') {
+        // TODO uncomment this line to exclude RxJava from Instabug and use your own version
+//        exclude group: 'io.reactivex'
 
         exclude module: 'appcompat-v7'
         // TODO uncomment next line if you're facing compilation issue in build.gradle about gms different versions

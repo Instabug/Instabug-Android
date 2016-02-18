@@ -1,7 +1,10 @@
 package com.example.instabug.ui.activities;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Toast;
 
 import com.example.instabug.R;
 import com.example.instabug.ui.views.CustomGoogleMap;
@@ -20,6 +23,13 @@ public class GoogleMapsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
+        findViewById(R.id.attach_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Instabug.setFileAttachment(Uri.parse("android.resource://com.example.instabug/" + R.raw.extra));
+                Toast.makeText(GoogleMapsActivity.this, "File saved to be uploaded", Toast.LENGTH_SHORT).show();
+            }
+        });
         setUpMapIfNeeded();
     }
 
