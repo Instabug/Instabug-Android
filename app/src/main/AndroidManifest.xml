@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest
     package="com.example.instabug"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- TODO Deny RECORD_AUDIO permission from Instabug -->
+    <uses-permission
+        android:name="android.permission.RECORD_AUDIO"
+        tools:node="remove"/>
 
     <uses-feature
         android:glEsVersion="0x00020000"
