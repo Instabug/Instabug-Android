@@ -111,6 +111,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_share) {
             startActivity(Intent.createChooser(getShareIntent(), getResources().getString(R.string.share_to_friends)));
         } else if (id == R.id.nav_about) {
+            Instabug.showIntroMessage();
             // TODO click about to show dialog to test screenshot with dialogs
             Toast.makeText(this, "Coming soon", Toast.LENGTH_SHORT).show();
         }
