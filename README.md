@@ -28,15 +28,15 @@ Using Instabug is as easy as "Get ready, Get set, Go".
 
     Grab your desired flavour via Gradle:
     ```groovy
-        compile 'com.instabug.library:instabug:2.3.3'
+        compile 'com.instabug.library:instabug:2.4.0'
     ```
     or
     ```groovy
-        compile 'com.instabug.library:instabugcompat:2.3.3'
+        compile 'com.instabug.library:instabugcompat:2.4.0'
     ```
     or
     ```groovy
-        compile 'com.instabug.library:instabugabs:2.3.3'
+        compile 'com.instabug.library:instabugabs:2.4.0'
     ```
     or via Maven: (if you're that kind of person :bowtie:)
     ```xml

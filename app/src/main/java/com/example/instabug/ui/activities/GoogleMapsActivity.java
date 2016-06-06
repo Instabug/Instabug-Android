@@ -26,7 +26,7 @@ public class GoogleMapsActivity extends AppCompatActivity {
         findViewById(R.id.attach_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Instabug.setFileAttachment(Uri.parse("android.resource://com.example.instabug/" + R.raw.extra));
+                Instabug.setFileAttachment(Uri.parse("android.resource://com.example.instabug/" + R.raw.extra), "file.file");
                 Toast.makeText(GoogleMapsActivity.this, "File saved to be uploaded", Toast.LENGTH_SHORT).show();
             }
         });
