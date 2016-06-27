@@ -1,6 +1,12 @@
 Change Log
 ==========
 
+Version 2.5.0 *(2016-06-27)*
+----------------------------
+
+ * Exclude GCM from Instabug SDK
+ * Add `Instabug.setPushNotificationRegistrationToken()`, `Instabug.isInstabugNotification()` and `Instabug.showNotification()` for supporting in-app messaging’s notifications for GCM and FCM.
+
 Version 2.4.0 *(2016-06-05)*
 ----------------------------
 

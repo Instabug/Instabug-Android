@@ -18,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.instabug.R;
+import com.example.instabug.gcm.RegistrationIntentService;
 import com.instabug.library.Instabug;
 
 import butterknife.Bind;
@@ -39,6 +40,8 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
+        registerGCM();
+
         headerImage = (ImageView) navigationView.getHeaderView(0).findViewById(R.id.headerImageView);
         headerImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,6 +62,13 @@ public class MainActivity extends AppCompatActivity
         if (savedInstanceState == null) {
             navigationView.setCheckedItem(navigationView.getMenu().getItem(0).getItemId());
         }
+
+    }
+
+    private void registerGCM() {
+        // Start IntentService to register this application with GCM.
+        Intent intent = new Intent(this, RegistrationIntentService.class);
+        startService(intent);
     }
 
     @OnClick(R.id.feedback_fab)

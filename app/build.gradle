@@ -27,6 +27,7 @@ repositories {
     }
 }
 
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
@@ -34,12 +35,12 @@ dependencies {
     compile 'com.jakewharton:butterknife:7.0.1'
     compile 'com.android.support:design:23.2.0'
     compile 'com.android.support:appcompat-v7:23.2.0'
-    // TODO if you use a lower version than 8.4.0 (min is 7.5.0) you should uncomment the exclude line to avoid errors
+    // TODO if you use a lower version than 9.0.0 (min is 7.5.0) you should uncomment the exclude line to avoid errors
     compile 'com.google.android.gms:play-services:9.0.0'
     // TODO add the following 2 lines if you exclude io.reactivex from Instabug
 //    compile 'io.reactivex:rxjava:1.0.13'
 //    compile 'io.reactivex:rxandroid:1.0.1'
-    compile('com.instabug.library:instabug:2.4.0') {
+    compile('com.instabug.library:instabug:2.5.0') {
         // TODO uncomment this line to exclude RxJava from Instabug and use your own version
 //        exclude group: 'io.reactivex'
 
@@ -47,4 +48,6 @@ dependencies {
         // TODO uncomment next line if you're facing compilation issue in build.gradle about gms different versions
 //        exclude group: 'com.google.android.gms'
     }
+
+
 }
