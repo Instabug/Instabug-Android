@@ -4,10 +4,12 @@ import android.app.Application;
 import android.support.multidex.MultiDex;
 
 import com.instabug.library.IBGColorTheme;
+import com.instabug.library.IBGCustomTextPlaceHolder;
 import com.instabug.library.IBGInvocationEvent;
 import com.instabug.library.Instabug;
 import com.instabug.library.internal.module.InstabugLocale;
 
+import java.security.KeyFactory;
 import java.util.Locale;
 
 /**
@@ -30,5 +32,12 @@ public class SampleApplication extends Application {
                 .setLocale(new Locale(InstabugLocale.FRENCH.getCode()))
                 .setLocale(Locale.GERMAN)
                 .build();
+
+        //Settings custom strings to replace instabug's strings
+        IBGCustomTextPlaceHolder placeHolder = new IBGCustomTextPlaceHolder();
+        placeHolder.set(IBGCustomTextPlaceHolder.Key.REPORT_FEEDBACK, "Send Feedback");
+        placeHolder.set(IBGCustomTextPlaceHolder.Key.REPORT_BUG, "Send Bug Report");
+
+        Instabug.setCustomTextPlaceHolders(placeHolder);
     }
 }

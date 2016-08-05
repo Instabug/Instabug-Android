@@ -1,6 +1,12 @@
 Change Log
 ==========
 
+Version 2.6.0 *(2016-08-03)*
+----------------------------
+
+ * Add `Instabug.invokeConversations()`
+ * Add `IBGCustomTextPlaceHolder` & `Instabug.setCustomTextPlaceHolders(IBGCustomTextPlaceHolder ibgPlaceHolders)` for replacing instabug strings with custom strings.
+
 Version 2.5.1 *(2016-07-11)*
 ----------------------------
 
