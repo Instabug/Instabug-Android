@@ -25,8 +25,8 @@ Using Instabug is as easy as "Get ready, Get set, Go".
         compile 'com.instabug.library:instabug:3.0.0'
     ```
   
-    ```
     or via Maven: (if you're that kind of person :bowtie:)
+    
     ```xml
         <dependency>
           <groupId>com.instabug.library</groupId>
