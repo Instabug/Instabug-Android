@@ -2,12 +2,11 @@ package com.example.instabug.ui.activities;
 
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.instabug.BaseActivity;
 import com.example.instabug.R;
-import com.example.instabug.ui.views.CustomGoogleMap;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
@@ -15,7 +14,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.instabug.library.Instabug;
 
-public class GoogleMapsActivity extends AppCompatActivity implements OnMapReadyCallback {
+public class GoogleMapsActivity extends BaseActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap; // Might be null if Google Play services APK is not available.
     private SupportMapFragment mapFragment;
@@ -50,10 +49,6 @@ public class GoogleMapsActivity extends AppCompatActivity implements OnMapReadyC
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        CustomGoogleMap customGoogleMap = new CustomGoogleMap(mapFragment.getView(), mMap);
-        // TODO add this so that instabug recognizes you have a map and show it in the screenshot
-        Instabug.addCapturableView(customGoogleMap);
-
         setUpMap();
     }
 }

@@ -12,57 +12,29 @@ Using Instabug is as easy as "Get ready, Get set, Go".
 1. <b>Determining which Instabug flavour to use</b> (Getting ready)
     * If your `minSdkVersion` is `14+`:
     
-        Use `instabug` flavour
+        Check `Above14` flavour
     
     * If your `minSdkVersion` is `10+`:
-    
-        * If you're using Google support libraries (`com.android.support:*`):
-    
-            Use `instabugcompat` flavour
-        
-        * If you're using [ActionBarSherlock](https://github.com/JakeWharton/ActionBarSherlock):
-    
-            Use `instabugabs` flavour
+
+        Check `belowApi14` flavour
 
 1. <b>Adding Instabug to your dependencies</b> (Getting set)
 
     Grab your desired flavour via Gradle:
     ```groovy
-        compile 'com.instabug.library:instabug:2.6.1'
+        compile 'com.instabug.library:instabug:3.0.0'
     ```
-    or
-    ```groovy
-        compile 'com.instabug.library:instabugcompat:2.6.1'
-    ```
-    or
-    ```groovy
-        compile 'com.instabug.library:instabugabs:2.6.1'
+  
     ```
     or via Maven: (if you're that kind of person :bowtie:)
     ```xml
         <dependency>
           <groupId>com.instabug.library</groupId>
           <artifactId>instabug</artifactId>
-          <version>2.6.1</version>
+          <version>3.0.0</version>
         </dependency>
     ```
-    or 
-    ```xml
-        <dependency>
-          <groupId>com.instabug.library</groupId>
-          <artifactId>instabugcompat</artifactId>
-          <version>2.6.1</version>
-        </dependency>
-    ```
-    or
-    ```xml
-        <dependency>
-          <groupId>com.instabug.library</groupId>
-          <artifactId>instabugabs</artifactId>
-          <version>2.6.1</version>
-        </dependency>
-    ```
-
+   
 1. <b>Using Instabug</b> (Good to go!)
     
     * Initializing Instabug:
@@ -74,28 +46,11 @@ Using Instabug is as easy as "Get ready, Get set, Go".
                     super.onCreate();
                     // ...
                     new Instabug.Builder(this, "<YOUR_APP_TOKEN>")
-                            .setInvocationEvent(IBGInvocationEvent.IBGInvocationEventFloatingButton)
+                            .setInvocationEvent(InstabugInvocationEvent.InstabugInvocationEventFloatingButton)
                             .build();
                     // ...
                 }
         ```
-    * Extending Instabug Activities:
-        
-        **ONLY** if your `minSdkVersion` is **`10+`** should you extend `Instabug*Activity`
-        * If you're using `instabugcompat`:
-            * `InstabugAppCompatActivity`: extends `android.support.v7.app.AppCompatActivity`
-            * `InstabugActionBarActivity`: extends `android.support.v7.app.ActionBarActivity`
-            * `InstabugActivity`: extends `android.app.activity`
-            * `InstabugFragmentActivity`: extends `android.support.v4.app.FragmentActivity`
-            * `InstabugExpandableListActivity`: extends `android.app.ExpandableListActivity`
-            * `InstabugListActivity`: extends `android.app.ListActivity`
-            * `InstabugPreferenceActivity`: extends `android.preference.PreferenceActivity`
-        * If you're using `instabugabs`:
-            * `InstabugSherlockActivity`: extends `com.actionbarsherlock.app.SherlockActivity`
-            * `InstabugSherlockFragmentActivity`: extends `com.actionbarsherlock.app.SherlockFragmentActivity`
-            * `InstabugSherlockExpandableListActivity`: extends `com.actionbarsherlock.app.SherlockExpandableListActivity`
-            * `InstabugSherlockListActivity`: extends `com.actionbarsherlock.app.SherlockListActivity`
-            * `InstabugSherlockPreferenceActivity`: extends `com.actionbarsherlock.app.SherlockPreferenceActivity`
     
 For technical documentation and FAQs check the [wiki][wiki]
 

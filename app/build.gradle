@@ -18,6 +18,19 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    productFlavors {
+        aboveApi14{
+            minSdkVersion 15
+            applicationId "com.example.instabug.above4"
+            versionName "1.0-aboveApi14"
+        }
+        belowApi14 {
+            minSdkVersion 10
+            applicationId "com.example.instabug.below14"
+            versionName "1.0-belowApi14"
+        }
+    }
 }
 
 repositories {
@@ -30,7 +43,6 @@ repositories {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
     compile 'com.android.support:multidex:1.0.1'
     compile 'com.jakewharton:butterknife:7.0.1'
     compile 'com.android.support:design:23.2.0'
@@ -40,13 +52,12 @@ dependencies {
     // TODO add the following 2 lines if you exclude io.reactivex from Instabug
 //    compile 'io.reactivex:rxjava:1.0.13'
 //    compile 'io.reactivex:rxandroid:1.0.1'
-    compile('com.instabug.library:instabug:2.6.1') {
+    compile('com.instabug.library:instabug:3.0.0') {
         // TODO uncomment this line to exclude RxJava from Instabug and use your own version
 //        exclude group: 'io.reactivex'
 
-        exclude group: 'com.android.support'
         // TODO uncomment next line if you're facing compilation issue in build.gradle about gms different versions
-//        exclude group: 'com.google.android.gms'
+        exclude group: 'com.android.support'
     }
 
 

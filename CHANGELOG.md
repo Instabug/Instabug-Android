@@ -1,7 +1,22 @@
 Change Log
 ==========
 
-Version 2.6.0 *(2016-08-03)*
+
+Version 3.0.0 *(2016-10-16)*
+----------------------------
+
+* We have completely redesigned how the SDK looks and given you even more customization options to better fit the style of your app.
+* Added the ability to attach a screen recording to bug reports and conversations.
+* Enhanced our in-app messaging experience to enable users to start conversations with your team right from your app, complete with screenshots, screen recordings and voice notes attachments support.
+* We have localized the SDK into new languages. We now support a total of 20 languages.
+
+Version 2.6.2 *(2016-09-09)*
+----------------------------
+
+ * Bug fixes
+
+
+Version 2.6.1 *(2016-08-03)*
 ----------------------------
 
  * Bug fixes

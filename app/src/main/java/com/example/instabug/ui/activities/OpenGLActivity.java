@@ -5,13 +5,12 @@ import android.opengl.GLES20;
 import android.opengl.GLSurfaceView;
 import android.opengl.Matrix;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.widget.FrameLayout;
 
+import com.example.instabug.BaseActivity;
 import com.example.instabug.R;
-import com.instabug.library.Instabug;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -22,7 +21,7 @@ import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
 
-public class OpenGLActivity extends ActionBarActivity {
+public class OpenGLActivity extends BaseActivity {
 
     private GLSurfaceView mGLView;
 
@@ -37,7 +36,6 @@ public class OpenGLActivity extends ActionBarActivity {
         // as the ContentView for this Activity
         mGLView = new MyGLSurfaceView(this);
         // TODO add this so that instabug recognizes you have an OpenGL surface and show it in the screenshot
-        Instabug.setGLSurfaceView(mGLView);
         mainLayout.addView(mGLView, 0);
     }
 
