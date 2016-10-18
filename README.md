@@ -40,13 +40,13 @@ Using Instabug is as easy as "Get ready, Get set, Go".
     * Initializing Instabug:
         
         In your `Application` class add the following:
-        ```
+        ```java
                 @Override
                 public void onCreate() {
                     super.onCreate();
                     // ...
                     new Instabug.Builder(this, "<YOUR_APP_TOKEN>")
-                            .setInvocationEvent(InstabugInvocationEvent.InstabugInvocationEventFloatingButton)
+                            .setInvocationEvent(InstabugInvocationEvent.FLOATING_BUTTON)
                             .build();
                     // ...
                 }
