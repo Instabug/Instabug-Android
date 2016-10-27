@@ -5,7 +5,9 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.1'
+        classpath 'com.android.tools.build:gradle:2.2.2'
+        // the latest version of the android-apt plugin
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
     }
 }
 
@@ -17,4 +19,20 @@ allprojects {
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+// Define versions in a single place
+ext {
+    // Sdk and tools
+    minSdkVersion = 15
+    targetSdkVersion = 24
+    compileSdkVersion = 24
+    buildToolsVersion = '24.0.1'
+
+    // App dependencies
+    supportLibraryVersion = '24.2.1'
+    multidexVersion = '1.0.1'
+    butterknifeVersion = '8.4.0'
+    playservicesVersion = '9.6.0'
+    instabugVersion = '3.0.4'
 }

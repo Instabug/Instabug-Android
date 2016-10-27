@@ -23,7 +23,7 @@ public class SampleApplication extends Application {
     public void onCreate() {
         super.onCreate();
         MultiDex.install(this);
-        new Instabug.Builder(this, "f501f761142981d54b1fdea93963a934")
+        new Instabug.Builder(this, getString(R.string.INSTABUG_API_KEY))
                 .setEmailFieldRequired(false)
                 .setFloatingButtonOffsetFromTop(400)
                 .setTheme(InstabugColorTheme.InstabugColorThemeLight)

@@ -19,4 +19,5 @@
     <string name="maps">Maps</string>
     <string name="opengl">Open GL</string>
     <string name="tabs">Tabs</string>
+    <string name="INSTABUG_API_KEY">f501f761142981d54b1fdea93963a934</string>
 </resources>
