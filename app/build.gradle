@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.3"
-
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
     defaultConfig {
         applicationId "com.example.instabug"
-        minSdkVersion 15
-        targetSdkVersion 23
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
@@ -18,9 +18,8 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
     productFlavors {
-        aboveApi14{
+        aboveApi14 {
             minSdkVersion 15
             applicationId "com.example.instabug.above4"
             versionName "1.0-aboveApi14"
@@ -43,22 +42,20 @@ repositories {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:multidex:1.0.1'
-    compile 'com.jakewharton:butterknife:7.0.1'
-    compile 'com.android.support:design:23.2.0'
-    compile 'com.android.support:appcompat-v7:23.2.0'
+    compile "com.android.support:design:$rootProject.ext.supportLibraryVersion"
+    compile "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
+    compile "com.android.support:multidex:$rootProject.ext.multidexVersion"
+    compile "com.jakewharton:butterknife:$rootProject.ext.butterknifeVersion"
+    apt "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknifeVersion"
     // TODO if you use a lower version than 9.0.0 (min is 7.5.0) you should uncomment the exclude line to avoid errors
-    compile 'com.google.android.gms:play-services:9.2.0'
+    compile "com.google.android.gms:play-services:$rootProject.ext.playservicesVersion"
     // TODO add the following 2 lines if you exclude io.reactivex from Instabug
-//    compile 'io.reactivex:rxjava:1.0.13'
-//    compile 'io.reactivex:rxandroid:1.0.1'
-    compile('com.instabug.library:instabug:3.0.4') {
+    //compile 'io.reactivex:rxjava:1.0.13'
+    //compile 'io.reactivex:rxandroid:1.0.1'
+    compile("com.instabug.library:instabug:$rootProject.ext.instabugVersion") {
         // TODO uncomment this line to exclude RxJava from Instabug and use your own version
-//        exclude group: 'io.reactivex'
-
+        //exclude group: 'io.reactivex'
         // TODO uncomment next line if you're facing compilation issue in build.gradle about gms different versions
         exclude group: 'com.android.support'
     }
-
-
 }
