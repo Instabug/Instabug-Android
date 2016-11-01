@@ -22,16 +22,16 @@ Using Instabug is as easy as "Get ready, Get set, Go".
 
     Grab your desired flavour via Gradle:
     ```groovy
-        compile 'com.instabug.library:instabug:3.0.4'
+        compile 'com.instabug.library:instabug:3.0.5'
     ```
   
+    ```
     or via Maven: (if you're that kind of person :bowtie:)
-    
     ```xml
         <dependency>
           <groupId>com.instabug.library</groupId>
           <artifactId>instabug</artifactId>
-          <version>3.0.4</version>
+          <version>3.0.5</version>
         </dependency>
     ```
    
@@ -40,13 +40,13 @@ Using Instabug is as easy as "Get ready, Get set, Go".
     * Initializing Instabug:
         
         In your `Application` class add the following:
-        ```java
+        ```
                 @Override
                 public void onCreate() {
                     super.onCreate();
                     // ...
                     new Instabug.Builder(this, "<YOUR_APP_TOKEN>")
-                            .setInvocationEvent(InstabugInvocationEvent.FLOATING_BUTTON)
+                            .setInvocationEvent(InstabugInvocationEvent.InstabugInvocationEventFloatingButton)
                             .build();
                     // ...
                 }
