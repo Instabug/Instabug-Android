@@ -3,6 +3,7 @@ package com.example.instabug.ui.activities;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -13,13 +14,17 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.instabug.BaseActivity;
 import com.example.instabug.R;
 import com.example.instabug.gcm.RegistrationIntentService;
 import com.instabug.library.Instabug;
+import com.instabug.library.invocation.InstabugInvocationMode;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -32,7 +37,12 @@ public class MainActivity extends BaseActivity
     DrawerLayout drawer;
     @Bind(R.id.nav_view)
     NavigationView navigationView;
+    @Bind(R.id.spinner)
+    Spinner spinner;
     ImageView headerImage;
+
+    private static String[] colorNames = {"Red", "Blue", "Green", "Yellow"};
+    private static int[] colors = {Color.RED, Color.BLUE, Color.GREEN, Color.YELLOW};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +73,21 @@ public class MainActivity extends BaseActivity
             navigationView.setCheckedItem(navigationView.getMenu().getItem(0).getItemId());
         }
 
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, colorNames);
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(dataAdapter);
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Instabug.setPrimaryColor(colors[position]);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
     }
 
     private void registerGCM() {
@@ -74,6 +99,39 @@ public class MainActivity extends BaseActivity
     @OnClick(R.id.feedback_fab)
     public void onFeedbackFABClicked() {
         Instabug.invoke();
+    }
+
+    @OnClick(R.id.show_intro_message)
+    public void onShowIntroMessageClicked() {
+        Instabug.showIntroMessage();
+    }
+
+    @OnClick(R.id.start_feedback)
+    public void onFeedbackClicked() {
+        Instabug.invoke(InstabugInvocationMode.NEW_FEEDBACK);
+    }
+
+    @OnClick(R.id.start_bug_report)
+    public void onBugReportClicked() {
+        Instabug.invoke(InstabugInvocationMode.NEW_FEEDBACK);
+    }
+
+    @OnClick(R.id.start_new_conversation)
+    public void onNewConversationClicked() {
+        Instabug.invoke(InstabugInvocationMode.NEW_CHAT);
+    }
+
+    @OnClick(R.id.start_conversation_list)
+    public void onConversationListClicked() {
+        Instabug.invoke(InstabugInvocationMode.CHATS_LIST);
+    }
+
+    @OnClick(R.id.show_new_messages_count)
+    public void onNewMessageCountClicked() {
+        Toast.makeText(this,
+                "Number of unread messages: " +
+                        String.valueOf(Instabug.getUnreadMessagesCount()), Toast.LENGTH_SHORT)
+                .show();
     }
 
     public void onHeaderImageClicked() {

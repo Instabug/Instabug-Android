@@ -19,4 +19,11 @@
     <string name="maps">Maps</string>
     <string name="opengl">Open GL</string>
     <string name="tabs">Tabs</string>
+    <string name="action_send_bug_report">Send Bug Report</string>
+    <string name="action_send_feedback">Send Feedback</string>
+    <string name="action_start_new_conversation">Start new conversation</string>
+    <string name="action_show_conversation_list">Show conversation list</string>
+    <string name="action_show_new_messages_count">Show new messages count</string>
+    <string name="action_primary_color">Choose primary color</string>
+    <string name="action_show_intro_message">Show intro message</string>
 </resources>
