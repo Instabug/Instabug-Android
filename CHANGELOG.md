@@ -1,6 +1,12 @@
 Change Log
 ==========
 
+Version 3.0.6 *(2016-11-10)*
+----------------------------
+
+* Add `setEnableSystemNotificationSound` & `setEnableInAppNotificationSound` for controlling notifications sound of the in-App chat
+* Bug fixes
+
 Version 3.0.5 *(2016-10-30)*
 ----------------------------
 

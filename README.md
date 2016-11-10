@@ -20,25 +20,25 @@ Using Instabug is as easy as "Get ready, Get set, Go".
 
 1. <b>Adding Instabug to your dependencies</b> (Getting set)
 
-    Grab your desired flavour via Gradle:
+    Grab via Gradle:
     ```groovy
-        compile 'com.instabug.library:instabug:3.0.5'
+        compile 'com.instabug.library:instabug:3.0.6'
     ```
-  
-    ```
+
     or via Maven: (if you're that kind of person :bowtie:)
+
     ```xml
         <dependency>
           <groupId>com.instabug.library</groupId>
           <artifactId>instabug</artifactId>
-          <version>3.0.5</version>
+          <version>3.0.6</version>
         </dependency>
     ```
-   
+
 1. <b>Using Instabug</b> (Good to go!)
-    
+
     * Initializing Instabug:
-        
+
         In your `Application` class add the following:
         ```
                 @Override
@@ -51,7 +51,7 @@ Using Instabug is as easy as "Get ready, Get set, Go".
                     // ...
                 }
         ```
-    
+
 For technical documentation and FAQs check the [wiki][wiki]
 
 License
@@ -75,3 +75,4 @@ License
  [1]: https://instabug.com/sdk-integration#android
  [2]: https://instabug.com/
  [wiki]: https://github.com/Instabug/android-sample/wiki
+
