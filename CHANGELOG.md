@@ -1,6 +1,15 @@
 Change Log
 ==========
 
+Version 3.1.0 *(2016-11-24)*
+----------------------------
+
+* Message Actions: allows you to add actionable buttons to messages you send to your users. Each button take users to a URL you specify through the Instabug dashboard. You can use Message Actions for things like asking your users to review your app on the Play Store, or to complete a short survey.
+* Reporting Categories: allows you to show a predefined set of categories for users to choose from when reporting a bug or sending feedback. Selected category shows up on your Instabug dashboard as a tag to make filtering through issues easier.
+* We have a new experience for adding attachments to bug reports and feedback.
+* Bug fixes
+
+
 Version 3.0.6 *(2016-11-10)*
 ----------------------------
 

@@ -11,8 +11,10 @@ import com.instabug.library.InstabugColorTheme;
 import com.instabug.library.InstabugCustomTextPlaceHolder;
 import com.instabug.library.internal.module.InstabugLocale;
 import com.instabug.library.invocation.InstabugInvocationEvent;
+import com.instabug.library.model.BugCategory;
 
 import java.security.KeyFactory;
+import java.util.ArrayList;
 import java.util.Locale;
 
 /**
@@ -30,7 +32,7 @@ public class SampleApplication extends Application {
                 .setIntroMessageEnabled(false)
                 .setInvocationEvent(InstabugInvocationEvent.SHAKE)
                 .setAttachmentTypesEnabled(true, true, true, true, true)
-                        // TODO the following are 3 acceptable ways to force Locale in Instabug (last one is the only 1 applied)
+                // TODO the following are 3 acceptable ways to force Locale in Instabug (last one is the only 1 applied)
                 .setLocale(new Locale(InstabugLocale.SIMPLIFIED_CHINESE.getCode(), InstabugLocale.SIMPLIFIED_CHINESE.getCountry()))
                 .setLocale(new Locale(InstabugLocale.FRENCH.getCode()))
                 .setLocale(Locale.GERMAN)
@@ -44,5 +46,16 @@ public class SampleApplication extends Application {
         placeHolder.set(InstabugCustomTextPlaceHolder.Key.REPORT_BUG, "Send Bug Report");
 
         Instabug.setCustomTextPlaceHolders(placeHolder);
+
+        ArrayList<BugCategory> bugCategories = new ArrayList<>();
+        bugCategories.add(
+                BugCategory.getInstance().withLabel("Map").withIcon(android.R.drawable.ic_dialog_map));
+        bugCategories.add(BugCategory.getInstance()
+                .withLabel("Alert")
+                .withIcon(android.R.drawable.ic_dialog_alert));
+        bugCategories.add(
+                BugCategory.getInstance().withLabel("Mail").withIcon(android.R.drawable.ic_dialog_email));
+
+        Instabug.setBugCategories(bugCategories);
     }
 }
