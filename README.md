@@ -46,7 +46,7 @@ Using Instabug is as easy as "Get ready, Get set, Go".
                     super.onCreate();
                     // ...
                     new Instabug.Builder(this, "<YOUR_APP_TOKEN>")
-                            .setInvocationEvent(InstabugInvocationEvent.InstabugInvocationEventFloatingButton)
+                            .setInvocationEvent(InstabugInvocationEvent.FLOATING_BUTTON)
                             .build();
                     // ...
                 }
