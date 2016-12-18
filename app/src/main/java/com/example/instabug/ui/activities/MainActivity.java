@@ -25,6 +25,7 @@ import com.example.instabug.R;
 import com.example.instabug.gcm.RegistrationIntentService;
 import com.instabug.library.Instabug;
 import com.instabug.library.invocation.InstabugInvocationMode;
+import com.instabug.library.logging.InstabugLog;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -49,6 +50,9 @@ public class MainActivity extends BaseActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
+        //Instabug logs
+        InstabugLog.d("MainActivity - Created");
 
         registerGCM();
 

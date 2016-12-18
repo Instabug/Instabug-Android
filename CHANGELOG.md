@@ -1,6 +1,13 @@
 Change Log
 ==========
 
+Version 3.2.0 *(2016-12-18)*
+----------------------------
+
+* `InstabugLog` now has multiple log levels that appear on your Instabug dashboard with different colors. Check `InstabugLog.d()`, `InstabugLog.i()`, `InstabugLog.v()`, `InstabugLog.e()` and `InstabugLog.w()`.
+* You can now add custom user attributes to be sent along with your reports. Check `Instabug.setUserAttribute()`.
+* We have added the ability to start a chat with users from your Instabug dashboard.
+
 Version 3.1.4 *(2016-12-15)*
 ----------------------------
 
