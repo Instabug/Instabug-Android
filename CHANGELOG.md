@@ -1,6 +1,11 @@
 Change Log
 ==========
 
+Version 3.2.0 *(2017-01-04)*
+----------------------------
+* Introducing APIs for logging network requests performed by your application. Requests details along with their responses are going to be sent with each report. For more info, check: http://docs.instabug.com/docs/network-requests-logging-android
+* Fix bug with Screenshot gesture
+
 Version 3.2.0 *(2016-12-18)*
 ----------------------------
 

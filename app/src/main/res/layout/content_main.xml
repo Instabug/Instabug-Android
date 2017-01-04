@@ -62,6 +62,12 @@
         android:padding="10dp"
         android:text="@string/action_show_new_messages_count" />
 
+    <Button
+        android:id="@+id/do_network_request"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="@string/action_do_network_request" />
 
     <LinearLayout
         android:layout_width="match_parent"

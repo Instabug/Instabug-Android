@@ -26,4 +26,5 @@
     <string name="action_show_new_messages_count">Show new messages count</string>
     <string name="action_primary_color">Choose primary color</string>
     <string name="action_show_intro_message">Show intro message</string>
+    <string name="action_do_network_request">Do network request</string>
 </resources>
