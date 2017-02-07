@@ -1,7 +1,19 @@
 Change Log
 ==========
 
-Version 3.2.0 *(2017-01-04)*
+Version 4.0.1 *(2017-02-07)*
+----------------------------
+* Bug fixes
+
+Version 4.0.0 *(2017-01-02)*
+----------------------------
+* You can now send surveys to your users through Instabug! Our mobile-optimized surveys let you get feedback from your users that help you make informed decisions about prioritizing your product roadmap. You can target users based on various criteria, including app version, the date they started using the app as well as custom user attributes and events.
+* Bug reports now include a complete 3D view of your UI. You'll be able to debug your complete view hierarchy from your Instabug dashboard!
+* We've redesigned our screen recording experience. You can now add voice notes while recording the screen, and while we're at it, we've thrown in a brand new, more-intuitive UI.
+* Track custom user events that happen throughout your application with our new `Instabug.logUserEvent()`API.
+* Bug fixes
+
+Version 3.3.0 *(2017-01-04)*
 ----------------------------
 * Introducing APIs for logging network requests performed by your application. Requests details along with their responses are going to be sent with each report. For more info, check: http://docs.instabug.com/docs/network-requests-logging-android
 * Fix bug with Screenshot gesture
