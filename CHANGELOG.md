@@ -1,6 +1,10 @@
 Change Log
 ==========
 
+Version 4.0.3 *(2017-03-22)*
+----------------------------
+* Bug fixes
+
 Version 4.0.3 *(2017-03-09)*
 ----------------------------
 * Reduce memory footprint of the SDK
