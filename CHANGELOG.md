@@ -1,6 +1,69 @@
 Change Log
 ==========
 
+Version 4.2.6 *(2017-07-21)*
+----------------------------
+* Increase the length of InstabugLog to 10K
+* Fix Logs not being sent with created crash report when added in PreSendingRunnable
+* Force PreInvocation Runnable to run in the main thread
+
+Version 4.2.5 *(2017-07-16)*
+----------------------------
+* Fix concurrency issue with logs
+* Fix bug happens randomly when sending extra screenshot as first message
+
+Version 4.2.4 *(2017-07-10)*
+----------------------------
+* Increase file attachments to 10 files
+* Increase the length of network logs, instabug logs & user events to 10K
+* File attachment can be up to 50 MB
+* Increase file attachments to 10 files
+
+Version 4.2.2 *(2017-06-28)*
+----------------------------
+* Fix issue with intro dialog not shown
+* Optimize the user events insertions
+
+Version 4.2.1 *(2017-06-23)*
+----------------------------
+* fix issue with pro-guard
+* Fix in-App chat title in RTL views
+* Fix bug with attaching image from gallery
+* Fix bug with dragging the magnifier in annotation screen
+* Fix wrong email is displayed in email field after deleting it by the user
+* Fix an issue with screenshot on Oppo devices
+
+Version 4.2.0 *(2017-06-19)*
+----------------------------
+* Introducing `Instabug.setPreInvocation()` API to run before invocation event
+* Fix for screenshot gesture with Samsung Galaxy S8
+* Fix bug with in-app messaging if the first message in conversation is an image
+* Fix issue with RTL support
+* Fix issue in Surveys with dark theme
+
+Version 4.1.1 *(2017-06-05)*
+----------------------------
+* Fix for status bar color
+* Fix for attachment view in dark theme
+
+Version 4.1.0 *(2017-05-31)*
+----------------------------
+* Introducing `setRequestedOrientation`, `getRequestedOrientation` and `resetRequestedOrientation` for manually control the orientation of the SDK
+* Adjust ImageViews in bug reporting view
+* Fix for surveys re-appearing after being answered
+* Other minor bug fixes
+
+Version 4.0.10 *(2017-05-09)*
+----------------------------
+* Fix issue with status bar color
+* Fix for Instabug views appearing in screenshots
+* Fix “no chat with id” bug
+* Other fixes in the core SDK
+
+Version 4.0.8 *(2017-04-24)*
+----------------------------
+* Bug fixes
+
 Version 4.0.7 *(2017-04-13)*
 ----------------------------
 * Bug fixes

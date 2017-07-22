@@ -22,7 +22,7 @@ Using Instabug is as easy as "Get ready, Get set, Go".
 
     Grab via Gradle:
     ```groovy
-        compile 'com.instabug.library:instabug:4.0.7'
+        compile 'com.instabug.library:instabug:4.2.6'
     ```
 
     or via Maven: (if you're that kind of person :bowtie:)
@@ -31,7 +31,7 @@ Using Instabug is as easy as "Get ready, Get set, Go".
         <dependency>
           <groupId>com.instabug.library</groupId>
           <artifactId>instabug</artifactId>
-          <version>4.0.7</version>
+          <version>4.2.6</version>
         </dependency>
     ```
 
@@ -52,7 +52,7 @@ Using Instabug is as easy as "Get ready, Get set, Go".
                 }
         ```
 
-For technical documentation and FAQs check the [wiki][wiki]
+For technical documentation check the [API reference][api_reference]
 
 License
 =======
@@ -72,7 +72,7 @@ License
     limitations under the License.
 
 
- [1]: https://instabug.com/sdk-integration#android
+ [1]: https://docs.instabug.com/docs/android-integration
  [2]: https://instabug.com/
- [wiki]: https://github.com/Instabug/android-sample/wiki
+ [api_reference]: https://github.com/Instabug/android-sample/wiki
 

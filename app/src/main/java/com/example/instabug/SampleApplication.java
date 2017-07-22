@@ -6,34 +6,37 @@ import android.support.multidex.MultiDex;
 import com.instabug.library.Instabug;
 import com.instabug.library.InstabugColorTheme;
 import com.instabug.library.InstabugCustomTextPlaceHolder;
+import com.instabug.library.bugreporting.model.ReportCategory;
 import com.instabug.library.internal.module.InstabugLocale;
 import com.instabug.library.invocation.InstabugInvocationEvent;
-import com.instabug.library.model.BugCategory;
 
 import java.util.ArrayList;
 import java.util.Locale;
 
-/**
- * @author mSobhy
- */
+
 public class SampleApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
         MultiDex.install(this);
+
+        //initialing instabug
         new Instabug.Builder(this, "f501f761142981d54b1fdea93963a934")
-                .setEmailFieldRequired(false)
-                .setFloatingButtonOffsetFromTop(400)
-                .setTheme(InstabugColorTheme.InstabugColorThemeLight)
-                .setIntroMessageEnabled(false)
                 .setInvocationEvent(InstabugInvocationEvent.SHAKE)
-                .setAttachmentTypesEnabled(true, true, true, true, true)
-                // TODO the following are 3 acceptable ways to force Locale in Instabug (last one is the only 1 applied)
-                .setLocale(new Locale(InstabugLocale.SIMPLIFIED_CHINESE.getCode(), InstabugLocale.SIMPLIFIED_CHINESE.getCountry()))
-                .setLocale(new Locale(InstabugLocale.FRENCH.getCode()))
-                .setLocale(Locale.GERMAN)
                 .build();
 
+        //adding some customizations
+        Instabug.setEmailFieldRequired(false);
+        Instabug.setFloatingButtonOffsetFromTop(400);
+        Instabug.setTheme(InstabugColorTheme.InstabugColorThemeLight);
+        Instabug.setAttachmentTypesEnabled(true, true, true, true, true);
+        Instabug.setIntroMessageEnabled(false);
+
+        // TODO the following are 3 acceptable ways to force Locale in Instabug (last one
+        Instabug.setLocale(new Locale(InstabugLocale.SIMPLIFIED_CHINESE.getCode(), InstabugLocale
+                .SIMPLIFIED_CHINESE.getCountry()));
+        Instabug.setLocale(new Locale(InstabugLocale.FRENCH.getCode()));
+        Instabug.setLocale(Locale.GERMAN);
         Instabug.setDebugEnabled(true);
 
         //Settings custom strings to replace instabug's strings
@@ -43,16 +46,19 @@ public class SampleApplication extends Application {
 
         Instabug.setCustomTextPlaceHolders(placeHolder);
 
-        ArrayList<BugCategory> bugCategories = new ArrayList<>();
-        bugCategories.add(
-                BugCategory.getInstance().withLabel("Map").withIcon(android.R.drawable.ic_dialog_map));
-        bugCategories.add(BugCategory.getInstance()
+        //Setting report categories
+        ArrayList<ReportCategory> reportCategories = new ArrayList<>();
+        reportCategories.add(
+                ReportCategory.getInstance().withLabel("Map").withIcon(android.R.drawable
+                        .ic_dialog_map));
+        reportCategories.add(ReportCategory.getInstance()
                 .withLabel("Alert")
                 .withIcon(android.R.drawable.ic_dialog_alert));
-        bugCategories.add(
-                BugCategory.getInstance().withLabel("Mail").withIcon(android.R.drawable.ic_dialog_email));
+        reportCategories.add(
+                ReportCategory.getInstance().withLabel("Mail").withIcon(android.R.drawable
+                        .ic_dialog_email));
 
-        Instabug.setBugCategories(bugCategories);
+        Instabug.setReportCategories(reportCategories);
 
         //setting user attributes
         Instabug.setUserAttribute("USER_TYPE", "instabug user");
