@@ -27,16 +27,22 @@ public class SampleApplication extends Application {
 
         //adding some customizations
         Instabug.setEmailFieldRequired(false);
-        Instabug.setFloatingButtonOffsetFromTop(400);
+        //Choosing instabug theme
         Instabug.setTheme(InstabugColorTheme.InstabugColorThemeLight);
+        //Choosing type of attachments allowed
+        //1. initial screenshot, 2. extra screenshot, 3. image from gallery, 4. voice note
+        //5. screen record
         Instabug.setAttachmentTypesEnabled(true, true, true, true, true);
+        //For setting instabug bug intro message enabled or disabled
         Instabug.setIntroMessageEnabled(false);
 
-        // TODO the following are 3 acceptable ways to force Locale in Instabug (last one
-        Instabug.setLocale(new Locale(InstabugLocale.SIMPLIFIED_CHINESE.getCode(), InstabugLocale
-                .SIMPLIFIED_CHINESE.getCountry()));
+        // TODO the following are 3 acceptable ways to force Locale in Instabug (last one is the only 1 applied)
+        Instabug.setLocale(new Locale(InstabugLocale.SIMPLIFIED_CHINESE.getCode(),
+                InstabugLocale.SIMPLIFIED_CHINESE.getCountry()));
         Instabug.setLocale(new Locale(InstabugLocale.FRENCH.getCode()));
         Instabug.setLocale(Locale.GERMAN);
+
+        //To show instabug debug logs if necessary
         Instabug.setDebugEnabled(true);
 
         //Settings custom strings to replace instabug's strings

@@ -1,6 +1,14 @@
 Change Log
 ==========
 
+Version 4.2.7 *(2017-08-06)*
+----------------------------
+* Introduce `setVideoRecordingFloatingButtonCorner` to change the position of the screen recording floating button
+* Fix mic remains muted after screen recording
+* Remove `No known package when getting name for resource number 0xffffffff` warning while collecting view hierarchy
+* Fix user attributes issue with crash reporting
+
+
 Version 4.2.6 *(2017-07-21)*
 ----------------------------
 * Increase the length of InstabugLog to 10K

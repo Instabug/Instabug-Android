@@ -59,19 +59,19 @@
         </receiver>
 
         <service
-            android:name=".gcm.InstabugGCMListenerService"
+            android:name="com.example.instabug.gcm.InstabugGCMListenerService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
             </intent-filter>
         </service>
         <service
-            android:name="gcm.InstabugGCMListenerService"
+            android:name="com.example.instabug.gcm.InstabugInstanceIDListenerService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.android.gms.iid.InstanceID" />
             </intent-filter>
         </service>
-        <service android:name=".gcm.RegistrationIntentService"/>
+        <service android:name="com.example.instabug.gcm.RegistrationIntentService"/>
     </application>
 </manifest>
