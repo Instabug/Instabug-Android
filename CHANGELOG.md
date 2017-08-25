@@ -1,13 +1,27 @@
 Change Log
 ==========
 
+Version 4.2.10 *(2017-08-06)*
+----------------------------
+* Introduce `addExtraReportField` API to add extra fields to the bug/feedback reports
+* Fix email field hiding after calling `identifyUser` API
+
+Version 4.2.9 *(2017-08-17)*
+----------------------------
+* New API to add file attachment as an array of bytes
+* Fix issue with receiving notifications for already read messages
+* Fix issue with taking screenshots for GLSurfaceView
+
+Version 4.2.8 *(2017-08-10)*
+----------------------------
+* Adding the ability to differentiate between ui elements with the same type in user steps
+
 Version 4.2.7 *(2017-08-06)*
 ----------------------------
 * Introduce `setVideoRecordingFloatingButtonCorner` to change the position of the screen recording floating button
 * Fix mic remains muted after screen recording
 * Remove `No known package when getting name for resource number 0xffffffff` warning while collecting view hierarchy
 * Fix user attributes issue with crash reporting
-
 
 Version 4.2.6 *(2017-07-21)*
 ----------------------------
