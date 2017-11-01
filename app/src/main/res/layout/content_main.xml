@@ -25,12 +25,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
+        android:onClick="onShowIntroMessageClicked"
         android:text="@string/action_show_intro_message" />
 
     <Button
         android:id="@+id/start_bug_report"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="onBugReportClicked"
         android:padding="10dp"
         android:text="@string/action_send_bug_report" />
 
@@ -39,6 +41,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
+        android:onClick="onFeedbackClicked"
         android:text="@string/action_send_feedback" />
 
     <Button
@@ -46,6 +49,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
+        android:onClick="onNewConversationClicked"
         android:text="@string/action_start_new_conversation" />
 
     <Button
@@ -53,6 +57,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
+        android:onClick="onConversationListClicked"
         android:text="@string/action_show_conversation_list" />
 
     <Button
@@ -60,6 +65,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
+        android:onClick="onNewMessageCountClicked"
         android:text="@string/action_show_new_messages_count" />
 
     <Button
@@ -67,6 +73,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
+        android:onClick="onDoNetworkRequestClicked"
         android:text="@string/action_do_network_request" />
 
     <LinearLayout

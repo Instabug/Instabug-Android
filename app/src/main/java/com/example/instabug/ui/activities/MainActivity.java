@@ -41,18 +41,11 @@ import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import butterknife.Bind;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
-
 public class MainActivity extends BaseActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    @Bind(R.id.drawer_layout)
     DrawerLayout drawer;
-    @Bind(R.id.nav_view)
     NavigationView navigationView;
-    @Bind(R.id.spinner)
     Spinner spinner;
     ImageView headerImage;
 
@@ -63,14 +56,16 @@ public class MainActivity extends BaseActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
 
         //Instabug logs
         InstabugLog.d("MainActivity - Created");
 
         registerGCM();
 
-        headerImage = (ImageView) navigationView.getHeaderView(0).findViewById(R.id.headerImageView);
+        drawer = findViewById(R.id.drawer_layout);
+        navigationView = findViewById(R.id.nav_view);
+        spinner = findViewById(R.id.spinner);
+        headerImage = navigationView.getHeaderView(0).findViewById(R.id.headerImageView);
         headerImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,7 +73,7 @@ public class MainActivity extends BaseActivity
             }
         });
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -114,46 +109,38 @@ public class MainActivity extends BaseActivity
         startService(intent);
     }
 
-    @OnClick(R.id.feedback_fab)
-    public void onFeedbackFABClicked() {
+    public void onFeedbackFABClicked(View view) {
         Instabug.invoke();
     }
 
-    @OnClick(R.id.show_intro_message)
-    public void onShowIntroMessageClicked() {
+    public void onShowIntroMessageClicked(View view) {
         Instabug.showIntroMessage();
     }
 
-    @OnClick(R.id.start_feedback)
-    public void onFeedbackClicked() {
+    public void onFeedbackClicked(View view) {
         Instabug.invoke(InstabugInvocationMode.NEW_FEEDBACK);
     }
 
-    @OnClick(R.id.start_bug_report)
-    public void onBugReportClicked() {
+    public void onBugReportClicked(View view) {
         Instabug.invoke(InstabugInvocationMode.NEW_FEEDBACK);
     }
 
-    @OnClick(R.id.start_new_conversation)
-    public void onNewConversationClicked() {
+    public void onNewConversationClicked(View view) {
         Instabug.invoke(InstabugInvocationMode.NEW_CHAT);
     }
 
-    @OnClick(R.id.start_conversation_list)
-    public void onConversationListClicked() {
+    public void onConversationListClicked(View view) {
         Instabug.invoke(InstabugInvocationMode.CHATS_LIST);
     }
 
-    @OnClick(R.id.show_new_messages_count)
-    public void onNewMessageCountClicked() {
+    public void onNewMessageCountClicked(View view) {
         Toast.makeText(this,
                 "Number of unread messages: " +
                         String.valueOf(Instabug.getUnreadMessagesCount()), Toast.LENGTH_SHORT)
                 .show();
     }
 
-    @OnClick(R.id.do_network_request)
-    public void onDoNetworkRequestClicked(){
+    public void onDoNetworkRequestClicked(View view) {
         new FetchMoviesData().execute();
     }
 
@@ -207,7 +194,7 @@ public class MainActivity extends BaseActivity
             Toast.makeText(this, "Coming soon", Toast.LENGTH_SHORT).show();
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }

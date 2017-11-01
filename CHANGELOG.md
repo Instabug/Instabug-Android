@@ -1,6 +1,21 @@
 Change Log
 ==========
 
+Version 4.3.2 *(2017-10-24)*
+----------------------------
+* Upgrade gradle version to 3.0
+* Fix NPE when invoking instabug
+
+Version 4.3.0 *(2017-09-22)*
+----------------------------
+* Fix issue in which user had to send application to background and back to foreground to enable invocation with event after enabling it in runtime.
+* Fix an issue in which user events are not sent with PreSendingHandler.
+* Fix other bugs and crashes.
+
+Version 4.2.11 *(2017-09-12)*
+----------------------------
+* Fix screenshot issue with GLSurfaceView
+
 Version 4.2.10 *(2017-08-06)*
 ----------------------------
 * Introduce `addExtraReportField` API to add extra fields to the bug/feedback reports
