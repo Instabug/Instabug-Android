@@ -9,30 +9,11 @@ Usage
 --------
 Using Instabug is as easy as "Get ready, Get set, Go".
 
-1. <b>Determining which Instabug flavour to use</b> (Getting ready)
-    * If your `minSdkVersion` is `14+`:
-    
-        Check `Above14` flavour
-    
-    * If your `minSdkVersion` is `10+`:
-
-        Check `belowApi14` flavour
-
 1. <b>Adding Instabug to your dependencies</b> (Getting set)
 
     Grab via Gradle:
     ```groovy
-        compile 'com.instabug.library:instabug:4.2.6'
-    ```
-
-    or via Maven: (if you're that kind of person :bowtie:)
-
-    ```xml
-        <dependency>
-          <groupId>com.instabug.library</groupId>
-          <artifactId>instabug</artifactId>
-          <version>4.2.6</version>
-        </dependency>
+        compile 'com.instabug.library:instabug:4.3.3'
     ```
 
 1. <b>Using Instabug</b> (Good to go!)
