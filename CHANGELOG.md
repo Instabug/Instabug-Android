@@ -1,10 +1,48 @@
 Change Log
 ==========
 
+Version 4.8.1 *(2018-01-10)*
+----------------------------
+* Fix bug with setAttachmentTypesEnabled API
+* Fix bug when closing prompt options fragment
+
+Version 4.8.0 *(2018-01-07)*
+----------------------------
+* Introduce NPS surveys
+* Fix issue with survey's submit button
+
+Version 4.7.0 *(2018-01-01)*
+----------------------------
+* Opt in surveys
+* Remove audio attachments
+* Various bug fixes
+
+Version 4.6.1 *(2018-10-26)*
+----------------------------
+* Fix build fail with enabled proguard
+
+Version 4.6.0 *(2017-12-24)*
+----------------------------
+* Multiple Questions and Star Rating surveys
+* Fix bug with Instabug when migrating to a new version from a disabled one
+* Removing non-translatable strings to fix warnings while building APKs
+
+Version 4.5.0 *(2017-12-10)*
+----------------------------
+* Enhance shape detection in annotation view
+* Fix orientation issue with android 27
+* Various bug fixes
+
+Version 4.3.3 *(2017-10-30)*
+----------------------------
+* upgrade gradle version to 3.0
+* Fix NPE when invoking instabug
+
 Version 4.3.2 *(2017-10-24)*
 ----------------------------
-* Upgrade gradle version to 3.0
-* Fix NPE when invoking instabug
+* Fix issue in which user had to send application to background and back to foreground to enable invocation with event after enabling it in runtime.
+* Fix an issue in which user events are not sent with PreSendingHandler.
+* Fix other bugs and crashes.
 
 Version 4.3.0 *(2017-09-22)*
 ----------------------------

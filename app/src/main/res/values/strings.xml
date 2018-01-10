@@ -27,4 +27,6 @@
     <string name="action_primary_color">Choose primary color</string>
     <string name="action_show_intro_message">Show intro message</string>
     <string name="action_do_network_request">Do network request</string>
+    <string name="action_send_handled_exception">Send handled exception</string>
+    <string name="action_crash_the_app">Crash the app</string>
 </resources>

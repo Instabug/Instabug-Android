@@ -140,6 +140,31 @@ public class MainActivity extends BaseActivity
                 .show();
     }
 
+    public void onSendHandledExceptionClicked(View view) {
+        new AlertDialog.Builder(MainActivity.this)
+                .setMessage("Do you want to report a handled NullPointerException")
+                .setPositiveButton("Why not?", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Instabug.reportException(new NullPointerException(), "Handled Exception");
+                    }
+                }).show();
+    }
+
+    public void onCrashTheAppClicked(View view) {
+        new AlertDialog.Builder(MainActivity.this)
+                .setMessage("Are you sure that want to crash the app?")
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        int[] arrayOfIntegers = new int[]{0, 1, 2, 3};
+                        int i = arrayOfIntegers[5];
+                    }
+                })
+                .setNegativeButton("No", null)
+                .show();
+    }
+
     public void onDoNetworkRequestClicked(View view) {
         new FetchMoviesData().execute();
     }
