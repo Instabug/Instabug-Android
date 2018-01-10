@@ -1,9 +1,11 @@
-Instabug Sample
+Instabug Android SDK
 ========
 
 An in-depth journey depicting all the ways to use [Instabug Android SDK][1].
 
-For more information about Instabug check [our website][2].
+Instabug is a bug reporting and in-app feedback tool that provides a seamless two-way communication with your users and testers. They can [easily report bugs](https://instabug.com/bug-reporting) and Instabug will automatically capture all the information you would need to debug and iterate faster.
+
+For more information check [Instabug.com][2].
 
 Usage
 --------
