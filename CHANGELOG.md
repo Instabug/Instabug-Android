@@ -1,6 +1,11 @@
 Change Log
 ==========
 
+Version 4.9.0 *(2018-01-15)*
+----------------------------
+* Introduce visual user steps
+* Various bug fixes
+
 Version 4.8.1 *(2018-01-10)*
 ----------------------------
 * Fix bug with setAttachmentTypesEnabled API

@@ -15,7 +15,7 @@ Using Instabug is as easy as "Get ready, Get set, Go".
 
     Grab via Gradle:
     ```groovy
-        implementation 'com.instabug.library:instabug:4.8.1'
+        implementation 'com.instabug.library:instabug:4.9.0'
     ```
 
     or via Maven: (if you're that kind of person :bowtie:)
@@ -24,7 +24,7 @@ Using Instabug is as easy as "Get ready, Get set, Go".
         <dependency>
           <groupId>com.instabug.library</groupId>
           <artifactId>instabug</artifactId>
-          <version>4.8.1</version>
+          <version>4.9.0</version>
         </dependency>
     ```
 
