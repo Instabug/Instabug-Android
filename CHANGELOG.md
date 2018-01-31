@@ -1,6 +1,10 @@
 Change Log
 ==========
 
+Version 4.9.1 *(2018-01-29)*
+----------------------------
+* Various bug fixes
+
 Version 4.9.0 *(2018-01-15)*
 ----------------------------
 * Introduce visual user steps
