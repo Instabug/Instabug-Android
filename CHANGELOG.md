@@ -1,6 +1,31 @@
 Change Log
 ==========
 
+Version 4.11.1 *(2018-02-27)*
+----------------------------
+* Fix issue with proguard
+
+Version 4.11.0 *(2018-02-26)*
+----------------------------
+* Enhanced in-app notifications
+* Extended bug report fields
+* Enhanced bug report categories
+* Several bug fixes
+
+Version 4.10.2 *(2018-02-18)*
+----------------------------
+* Network performance monitoring
+* Various bug fixes
+
+Version 4.10.1 *(2018-02-14)*
+----------------------------
+* Fix issue with proguard
+
+Version 4.10.0 *(2018-02-11)*
+----------------------------
+* Introducing Auto screen recording
+* Fix Chinese localizations
+
 Version 4.9.1 *(2018-01-29)*
 ----------------------------
 * Various bug fixes

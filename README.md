@@ -13,19 +13,8 @@ Using Instabug is as easy as "Get ready, Get set, Go".
 
 1. <b>Adding Instabug to your dependencies</b> (Getting set)
 
-    Grab via Gradle:
     ```groovy
-        implementation 'com.instabug.library:instabug:4.9.1'
-    ```
-
-    or via Maven: (if you're that kind of person :bowtie:)
-
-    ```xml
-        <dependency>
-          <groupId>com.instabug.library</groupId>
-          <artifactId>instabug</artifactId>
-          <version>4.9.1</version>
-        </dependency>
+        implementation 'com.instabug.library:instabug:4.11.1'
     ```
 
 1. <b>Using Instabug</b> (Good to go!)
