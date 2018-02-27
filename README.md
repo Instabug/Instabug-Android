@@ -22,7 +22,7 @@ Using Instabug is as easy as "Get ready, Get set, Go".
     * Initializing Instabug:
 
         In your `Application` class add the following:
-        ```
+        ```java
                 @Override
                 public void onCreate() {
                     super.onCreate();
