@@ -1,13 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion '26.0.2'
+    compileSdkVersion 27
 
     defaultConfig {
         applicationId "com.example.instabug"
         minSdkVersion 15
-        targetSdkVersion 26
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
@@ -41,11 +40,11 @@ repositories {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support:multidex:1.0.2'
-    implementation 'com.android.support:design:26.0.2'
-    implementation 'com.android.support:appcompat-v7:26.0.2'
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation "com.android.support:design:$supportBuildVersion"
+    implementation "com.android.support:appcompat-v7:$supportBuildVersion"
     // TODO if you use a lower version than 9.0.0 (min is 7.5.0) you should uncomment the exclude line to avoid errors
-    implementation 'com.google.android.gms:play-services:11.4.2'
+    implementation 'com.google.android.gms:play-services:12.0.0'
     // TODO add the following 2 lines if you exclude io.reactivex from Instabug
 //    implementation 'io.reactivex:rxjava:1.0.13'
 //    implementation 'io.reactivex:rxandroid:1.0.1'
@@ -54,6 +53,7 @@ dependencies {
 //        exclude group: 'io.reactivex'
 
         // TODO uncomment next line if you're facing compilation issue in build.gradle about gms different versions
+        // All com.android.support libs in build.gradle(app) must be compatible with support libs in instabug gradle
 //        exclude group: 'com.android.support'
     }
 
