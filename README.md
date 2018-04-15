@@ -14,7 +14,7 @@ Using Instabug is as easy as "Get ready, Get set, Go".
 1. <b>Adding Instabug to your dependencies</b> (Getting set)
 
     ```groovy
-        implementation 'com.instabug.library:instabug:4.11.1'
+        implementation 'com.instabug.library:instabug:4.13.1'
     ```
 
 1. <b>Using Instabug</b> (Good to go!)
