@@ -68,5 +68,7 @@ public class SampleApplication extends Application {
 
         //setting user attributes
         Instabug.setUserAttribute("USER_TYPE", "instabug user");
+
+        Instabug.setAutoScreenRecordingEnabled(true);
     }
 }
