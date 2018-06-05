@@ -1,118 +1,33 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:tools="http://schemas.android.com/tools"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingBottom="@dimen/activity_vertical_margin"
-            android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/activity_vertical_margin"
-            android:scrollbarStyle="outsideInset"
-            android:scrollbars="vertical"
-            tools:context=".MyActivity">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <RelativeLayout
+    <include layout="@layout/app_bar" />
+
+    <Button
+        android:id="@+id/action_show_invocation_events"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:onClick="onShowInvocationEventsClicked"
+        android:padding="10dp"
+        android:text="@string/action_show_invocation_events" />
 
-        <TextView
-            android:id="@+id/intro_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:text="@string/settings_description"/>
+    <Button
+        android:id="@+id/action_change_theme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onChangeThemeClicked"
+        android:padding="10dp"
+        android:text="@string/action_change_theme" />
 
+    <Button
+        android:id="@+id/action_change_primary_color"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onChangePrimaryColorClicked"
+        android:padding="10dp"
+        android:text="@string/action_change_primary_color" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/intro_text"
-            android:orientation="vertical">
-
-            <CheckBox
-                android:id="@+id/email_enabled"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Email Enbaled"/>
-
-            <CheckBox
-                android:id="@+id/email_required"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Email Required"/>
-
-            <CheckBox
-                android:id="@+id/comment_required"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:text="Comment Required"
-                />
-
-            <EditText
-                android:id="@+id/comment_field_hint"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:hint="Comment Field Hint">
-
-            </EditText>
-
-            <EditText
-                android:id="@+id/invalid_comment_message"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:hint="Invalid Comment Message"
-                android:imeActionLabel="Yalla"
-                android:imeOptions="actionNext"/>
-
-            <EditText
-                android:id="@+id/default_email"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:hint="Default Email"
-                android:imeActionLabel="Yalla"
-                android:imeOptions="actionNext"/>
-
-            <EditText
-                android:id="@+id/invalid_email_message"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:hint="Invalid Email Message"
-                android:imeActionLabel="Yalla"
-                android:imeOptions="actionNext"/>
-
-            <EditText
-                android:id="@+id/email_field_hint"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:hint="Email Field Hint"
-                android:imeActionLabel="Yalla"
-                android:imeOptions="actionNext"/>
-
-            <EditText
-                android:id="@+id/post_bug_report_message"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:hint="Post bug report message"
-                android:imeActionLabel="Yalla"
-                android:imeOptions="actionNext"/>
-
-            <EditText
-                android:id="@+id/post_feedback_report_message"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:hint="Post feedback report message"
-                android:imeActionLabel="Yalla"
-                android:imeOptions="actionNext"/>
-
-
-        </LinearLayout>
-
-    </RelativeLayout>
-</ScrollView>
+</LinearLayout>

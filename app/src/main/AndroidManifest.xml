@@ -36,8 +36,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".ui.activities.GoogleMapsActivity" />
+        <activity android:name=".ui.activities.SettingsActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
 
         <meta-data
             android:name="com.google.android.gms.version"
@@ -45,8 +45,6 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyD1NsFNyD12H_4lzgzth7lUxUAbZzyKEL4" />
-
-        <activity android:name=".ui.activities.OpenGLActivity" />
 
         <receiver
             android:name="com.google.android.gms.gcm.GcmReceiver"
