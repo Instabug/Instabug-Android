@@ -1,13 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion '26.0.2'
+    compileSdkVersion 27
 
     defaultConfig {
         applicationId "com.example.instabug"
         minSdkVersion 15
-        targetSdkVersion 26
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
@@ -41,11 +40,13 @@ repositories {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support:multidex:1.0.2'
-    implementation 'com.android.support:design:26.0.2'
-    implementation 'com.android.support:appcompat-v7:26.0.2'
-    // TODO if you use a lower version than 9.0.0 (min is 7.5.0) you should uncomment the exclude line to avoid errors
-    implementation 'com.google.android.gms:play-services:11.4.2'
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation "com.android.support:design:$rootProject.ext.androidSupport"
+    implementation "com.android.support:appcompat-v7:$rootProject.ext.androidSupport"
+
+    implementation 'com.google.firebase:firebase-core:16.0.0'
+    implementation 'com.google.firebase:firebase-messaging:17.0.0'
+
     // TODO add the following 2 lines if you exclude io.reactivex from Instabug
 //    implementation 'io.reactivex:rxjava:1.0.13'
 //    implementation 'io.reactivex:rxandroid:1.0.1'

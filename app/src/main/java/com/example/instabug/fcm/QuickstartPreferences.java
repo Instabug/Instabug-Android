@@ -1,4 +1,4 @@
-package com.example.instabug.gcm;
+package com.example.instabug.fcm;
 
 /**
  * Created by vezikon on 6/27/16.

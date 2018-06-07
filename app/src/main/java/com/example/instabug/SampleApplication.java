@@ -1,25 +1,29 @@
 package com.example.instabug;
 
 import android.app.Application;
+import android.content.Context;
 import android.support.multidex.MultiDex;
 
 import com.instabug.library.Instabug;
 import com.instabug.library.InstabugColorTheme;
 import com.instabug.library.InstabugCustomTextPlaceHolder;
-import com.instabug.library.bugreporting.model.ReportCategory;
 import com.instabug.library.internal.module.InstabugLocale;
 import com.instabug.library.invocation.InstabugInvocationEvent;
 import com.instabug.library.ui.onboarding.WelcomeMessage;
 
-import java.util.ArrayList;
 import java.util.Locale;
 
 
 public class SampleApplication extends Application {
     @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(this);
+    }
+
+    @Override
     public void onCreate() {
         super.onCreate();
-        MultiDex.install(this);
 
         //initialing instabug
         new Instabug.Builder(this, "48ad905e141bc665d064945f423aa414")

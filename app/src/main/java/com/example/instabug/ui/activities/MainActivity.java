@@ -3,30 +3,17 @@ package com.example.instabug.ui.activities;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.design.widget.NavigationView;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ImageView;
-import android.widget.Spinner;
-import android.widget.Toast;
 
 import com.example.instabug.BaseActivity;
 import com.example.instabug.R;
-import com.example.instabug.gcm.RegistrationIntentService;
+import com.example.instabug.fcm.RegistrationIntentService;
 import com.instabug.library.Instabug;
-import com.instabug.library.invocation.InstabugInvocationMode;
 import com.instabug.library.logging.InstabugLog;
 import com.instabug.library.logging.InstabugNetworkLog;
 import com.instabug.library.ui.onboarding.WelcomeMessage;
@@ -41,7 +28,6 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.Set;
 
 public class MainActivity extends BaseActivity {
 
@@ -53,7 +39,7 @@ public class MainActivity extends BaseActivity {
         //Instabug logs
         InstabugLog.d("MainActivity - Created");
 
-        registerGCM();
+        registerFCM();
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -61,8 +47,8 @@ public class MainActivity extends BaseActivity {
         doNetworkRequest();
     }
 
-    private void registerGCM() {
-        // Start IntentService to register this application with GCM.
+    private void registerFCM() {
+        // Start IntentService to register this application with FCM.
         Intent intent = new Intent(this, RegistrationIntentService.class);
         startService(intent);
     }
