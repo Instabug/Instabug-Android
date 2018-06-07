@@ -1,8 +1,9 @@
-package com.example.instabug.gcm;
+package com.example.instabug.fcm;
 
 import com.example.instabug.R;
 import com.example.instabug.ui.activities.MainActivity;
-import com.google.android.gms.gcm.GcmListenerService;
+import com.google.firebase.messaging.FirebaseMessagingService;
+import com.google.firebase.messaging.RemoteMessage;
 import com.instabug.library.Instabug;
 
 import android.app.NotificationManager;
@@ -11,44 +12,37 @@ import android.content.Context;
 import android.content.Intent;
 import android.media.RingtoneManager;
 import android.net.Uri;
-import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
 /**
  * Created by vezikon on 6/27/16.
  */
-public class InstabugGCMListenerService extends GcmListenerService {
-    private static final String TAG = "InstabugGCMListenerService";
+public class InstabugFCMListenerService extends FirebaseMessagingService {
+    private static final String TAG = "FCMListenerService";
 
-    /**
-     * Called when message is received.
-     *
-     * @param from SenderID of the sender.
-     * @param data Data bundle containing message data as key/value pairs.
-     *             For Set of keys use data.keySet().
-     */
-    // [START receive_message]
     @Override
-    public void onMessageReceived(String from, Bundle data) {
-        String message = data.getString("message");
-        Log.d(TAG, "From: " + from);
+    public void onMessageReceived(RemoteMessage remoteMessage) {
+        super.onMessageReceived(remoteMessage);
+
+        String message = remoteMessage.getData().get("message");
+        Log.d(TAG, "From: " + remoteMessage.getFrom());
         Log.d(TAG, "Message: " + message);
 
         //Check first if notification related to Instabug or not
-        if(Instabug.isInstabugNotification(data)){
+        if (Instabug.isInstabugNotification(remoteMessage.getData())) {
             //Shown notification related to Instabug
-            Instabug.showNotification(data);
-        }else {
+            Instabug.showNotification(remoteMessage.getData());
+        } else {
             sendNotification(message);
         }
+
     }
-    // [END receive_message]
 
     /**
-     * Create and show a simple notification containing the received GCM message.
+     * Create and show a simple notification containing the received FCM message.
      *
-     * @param message GCM message received.
+     * @param message FCM message received.
      */
     private void sendNotification(String message) {
         Intent intent = new Intent(this, MainActivity.class);
@@ -59,7 +53,7 @@ public class InstabugGCMListenerService extends GcmListenerService {
         Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
                 .setSmallIcon(R.mipmap.ic_launcher)
-                .setContentTitle("GCM Message")
+                .setContentTitle("FCM Message")
                 .setContentText(message)
                 .setAutoCancel(true)
                 .setSound(defaultSoundUri)

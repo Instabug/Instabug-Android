@@ -1,46 +1,47 @@
 package com.example.instabug;
 
 import android.app.Application;
+import android.content.Context;
 import android.support.multidex.MultiDex;
 
 import com.instabug.library.Instabug;
 import com.instabug.library.InstabugColorTheme;
 import com.instabug.library.InstabugCustomTextPlaceHolder;
-import com.instabug.library.bugreporting.model.ReportCategory;
 import com.instabug.library.internal.module.InstabugLocale;
 import com.instabug.library.invocation.InstabugInvocationEvent;
+import com.instabug.library.ui.onboarding.WelcomeMessage;
 
-import java.util.ArrayList;
 import java.util.Locale;
 
 
 public class SampleApplication extends Application {
     @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(this);
+    }
+
+    @Override
     public void onCreate() {
         super.onCreate();
-        MultiDex.install(this);
 
         //initialing instabug
-        new Instabug.Builder(this, "f501f761142981d54b1fdea93963a934")
+        new Instabug.Builder(this, "48ad905e141bc665d064945f423aa414")
                 .setInvocationEvent(InstabugInvocationEvent.SHAKE)
                 .build();
 
-        //adding some customizations
-        Instabug.setEmailFieldRequired(false);
         //Choosing instabug theme
         Instabug.setTheme(InstabugColorTheme.InstabugColorThemeLight);
         //Choosing type of attachments allowed
         //1. initial screenshot, 2. extra screenshot, 3. image from gallery, 4. voice note
         //5. screen record
-        Instabug.setAttachmentTypesEnabled(true, true, true, true, true);
-        //For setting instabug bug intro message enabled or disabled
-        Instabug.setIntroMessageEnabled(false);
+        Instabug.setWelcomeMessageState(WelcomeMessage.State.LIVE);
 
         // TODO the following are 3 acceptable ways to force Locale in Instabug (last one is the only 1 applied)
         Instabug.setLocale(new Locale(InstabugLocale.SIMPLIFIED_CHINESE.getCode(),
                 InstabugLocale.SIMPLIFIED_CHINESE.getCountry()));
         Instabug.setLocale(new Locale(InstabugLocale.FRENCH.getCode()));
-        Instabug.setLocale(Locale.GERMAN);
+        Instabug.setLocale(Locale.ENGLISH);
 
         //To show instabug debug logs if necessary
         Instabug.setDebugEnabled(true);
@@ -52,21 +53,9 @@ public class SampleApplication extends Application {
 
         Instabug.setCustomTextPlaceHolders(placeHolder);
 
-        //Setting report categories
-        ArrayList<ReportCategory> reportCategories = new ArrayList<>();
-        reportCategories.add(
-                ReportCategory.getInstance().withLabel("Map").withIcon(android.R.drawable
-                        .ic_dialog_map));
-        reportCategories.add(ReportCategory.getInstance()
-                .withLabel("Alert")
-                .withIcon(android.R.drawable.ic_dialog_alert));
-        reportCategories.add(
-                ReportCategory.getInstance().withLabel("Mail").withIcon(android.R.drawable
-                        .ic_dialog_email));
-
-        Instabug.setReportCategories(reportCategories);
-
         //setting user attributes
         Instabug.setUserAttribute("USER_TYPE", "instabug user");
+
+        Instabug.setAutoScreenRecordingEnabled(true);
     }
 }

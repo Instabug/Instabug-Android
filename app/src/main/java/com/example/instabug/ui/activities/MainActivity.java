@@ -3,32 +3,20 @@ package com.example.instabug.ui.activities;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.design.widget.NavigationView;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ImageView;
-import android.widget.Spinner;
-import android.widget.Toast;
 
 import com.example.instabug.BaseActivity;
 import com.example.instabug.R;
-import com.example.instabug.gcm.RegistrationIntentService;
+import com.example.instabug.fcm.RegistrationIntentService;
 import com.instabug.library.Instabug;
-import com.instabug.library.invocation.InstabugInvocationMode;
 import com.instabug.library.logging.InstabugLog;
 import com.instabug.library.logging.InstabugNetworkLog;
+import com.instabug.library.ui.onboarding.WelcomeMessage;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -41,16 +29,7 @@ import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class MainActivity extends BaseActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
-
-    DrawerLayout drawer;
-    NavigationView navigationView;
-    Spinner spinner;
-    ImageView headerImage;
-
-    private static String[] colorNames = {"Red", "Blue", "Green", "Yellow"};
-    private static int[] colors = {Color.RED, Color.BLUE, Color.GREEN, Color.YELLOW};
+public class MainActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,95 +39,30 @@ public class MainActivity extends BaseActivity
         //Instabug logs
         InstabugLog.d("MainActivity - Created");
 
-        registerGCM();
-
-        drawer = findViewById(R.id.drawer_layout);
-        navigationView = findViewById(R.id.nav_view);
-        spinner = findViewById(R.id.spinner);
-        headerImage = navigationView.getHeaderView(0).findViewById(R.id.headerImageView);
-        headerImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onHeaderImageClicked();
-            }
-        });
+        registerFCM();
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
-        toggle.syncState();
-
-        navigationView.setNavigationItemSelectedListener(this);
-
-        if (savedInstanceState == null) {
-            navigationView.setCheckedItem(navigationView.getMenu().getItem(0).getItemId());
-        }
-
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, colorNames);
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(dataAdapter);
-
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Instabug.setPrimaryColor(colors[position]);
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
+        doNetworkRequest();
     }
 
-    private void registerGCM() {
-        // Start IntentService to register this application with GCM.
+    private void registerFCM() {
+        // Start IntentService to register this application with FCM.
         Intent intent = new Intent(this, RegistrationIntentService.class);
         startService(intent);
     }
 
-    public void onFeedbackFABClicked(View view) {
+    public void onShowLiveOnboardingMessageClicked(View view) {
+        Instabug.showWelcomeMessage(WelcomeMessage.State.LIVE);
+    }
+
+    public void onShowBetaOnboardingMessageClicked(View view) {
+        Instabug.showWelcomeMessage(WelcomeMessage.State.BETA);
+    }
+
+    public void onShowInstabugClicked(View view) {
         Instabug.invoke();
-    }
-
-    public void onShowIntroMessageClicked(View view) {
-        Instabug.showIntroMessage();
-    }
-
-    public void onFeedbackClicked(View view) {
-        Instabug.invoke(InstabugInvocationMode.NEW_FEEDBACK);
-    }
-
-    public void onBugReportClicked(View view) {
-        Instabug.invoke(InstabugInvocationMode.NEW_FEEDBACK);
-    }
-
-    public void onNewConversationClicked(View view) {
-        Instabug.invoke(InstabugInvocationMode.NEW_CHAT);
-    }
-
-    public void onConversationListClicked(View view) {
-        Instabug.invoke(InstabugInvocationMode.CHATS_LIST);
-    }
-
-    public void onNewMessageCountClicked(View view) {
-        Toast.makeText(this,
-                "Number of unread messages: " +
-                        String.valueOf(Instabug.getUnreadMessagesCount()), Toast.LENGTH_SHORT)
-                .show();
-    }
-
-    public void onSendHandledExceptionClicked(View view) {
-        new AlertDialog.Builder(MainActivity.this)
-                .setMessage("Do you want to report a handled NullPointerException")
-                .setPositiveButton("Why not?", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        Instabug.reportException(new NullPointerException(), "Handled Exception");
-                    }
-                }).show();
     }
 
     public void onCrashTheAppClicked(View view) {
@@ -165,71 +79,29 @@ public class MainActivity extends BaseActivity
                 .show();
     }
 
-    public void onDoNetworkRequestClicked(View view) {
+    public void showNPSSurvey(View view) {
+        Instabug.showSurvey("ulUaFocMCejDr3Ldd8VBaA");
+    }
+
+    public void showMultipleQuestionSurvey(View view) {
+        Instabug.showSurvey("AGI5OH47k3eEAIKj-yKDWA");
+    }
+
+    public void showFeatureRequests(View view) {
+        Instabug.showFeatureRequests();
+    }
+
+    public void onShowSettingsClicked(View view) {
+        startActivity(new Intent(this, SettingsActivity.class));
+    }
+
+    public void doNetworkRequest() {
         new FetchMoviesData().execute();
     }
 
     public void onHeaderImageClicked() {
         Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.instabug.com"));
         startActivity(browserIntent);
-    }
-
-    @Override
-    public void onBackPressed() {
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.nav_home) {
-            AlertDialog alertDialog = new AlertDialog.Builder(this)
-                    .setMessage("Do you want to get a NullPointerException, because that's how " +
-                            "you get a NullPointerException :D")
-                    .setPositiveButton("Why not?", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            throw new NullPointerException("Test issue in Instabug Sample app");
-                        }
-                    }).show();
-            Instabug.setDialog(alertDialog);
-        } else if (id == R.id.nav_maps) {
-            startActivity(new Intent(this, GoogleMapsActivity.class));
-        } else if (id == R.id.nav_openGl) {
-            startActivity(new Intent(this, OpenGLActivity.class));
-        } else if (id == R.id.nav_share) {
-            startActivity(Intent.createChooser(getShareIntent(), getResources().getString(R.string.share_to_friends)));
-        } else if (id == R.id.nav_about) {
-            Instabug.showIntroMessage();
-            // TODO click about to show dialog to test screenshot with dialogs
-            Toast.makeText(this, "Coming soon", Toast.LENGTH_SHORT).show();
-        }
-
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
-    }
-
-    public Intent getShareIntent() {
-        String sharedText = "Check out this awesome sample app by @instabug\n\nhttps://github.com/Instabug/android-sample";
-        Intent shareIntent = new Intent(Intent.ACTION_SEND);
-        shareIntent.setType("text/plain");
-        shareIntent.putExtra(Intent.EXTRA_TEXT, sharedText);
-        return shareIntent;
     }
 
     private class FetchMoviesData extends AsyncTask<Void, Void, String> {
@@ -326,4 +198,5 @@ public class MainActivity extends BaseActivity
             Log.d("Response", s + "");
         }
     }
+
 }

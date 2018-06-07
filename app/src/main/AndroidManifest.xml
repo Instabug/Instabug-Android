@@ -36,8 +36,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".ui.activities.GoogleMapsActivity" />
+        <activity android:name=".ui.activities.SettingsActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
 
         <meta-data
             android:name="com.google.android.gms.version"
@@ -46,32 +46,21 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyD1NsFNyD12H_4lzgzth7lUxUAbZzyKEL4" />
 
-        <activity android:name=".ui.activities.OpenGLActivity" />
-
-        <receiver
-            android:name="com.google.android.gms.gcm.GcmReceiver"
-            android:exported="true"
-            android:permission="com.google.android.c2dm.permission.SEND">
-            <intent-filter>
-                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-                <category android:name="com.example.instabug" />
-            </intent-filter>
-        </receiver>
-
         <service
-            android:name="com.example.instabug.gcm.InstabugGCMListenerService"
+            android:name="com.example.instabug.fcm.InstabugFCMListenerService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
             </intent-filter>
         </service>
+
         <service
-            android:name="com.example.instabug.gcm.InstabugInstanceIDListenerService"
+            android:name="com.example.instabug.fcm.InstabugInstanceIDListenerService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.android.gms.iid.InstanceID" />
             </intent-filter>
         </service>
-        <service android:name="com.example.instabug.gcm.RegistrationIntentService"/>
+        <service android:name="com.example.instabug.fcm.RegistrationIntentService"/>
     </application>
 </manifest>

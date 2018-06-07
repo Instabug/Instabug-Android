@@ -1,4 +1,4 @@
-package com.example.instabug.gcm;
+package com.example.instabug.fcm;
 
 import android.app.IntentService;
 import android.content.Intent;
@@ -6,8 +6,7 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
-import com.google.android.gms.gcm.GoogleCloudMessaging;
-import com.google.android.gms.iid.InstanceID;
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.instabug.library.Instabug;
 
 
@@ -28,17 +27,15 @@ public class RegistrationIntentService extends IntentService {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 
         try {
-            // [START register_for_gcm]
+            // [START register_for_fcm]
             // Initially this call goes out to the network to retrieve the token, subsequent calls
             // are local.
-            // R.string.gcm_defaultSenderId (the Sender ID) is typically derived from google-services.json.
+            // R.string.fcm_defaultSenderId (the Sender ID) is typically derived from google-services.json.
             // See https://developers.google.com/cloud-messaging/android/start for details on this file.
             // [START get_token]
-            InstanceID instanceID = InstanceID.getInstance(this);
-            String token = instanceID.getToken(QuickstartPreferences.SENDER_ID,
-                    GoogleCloudMessaging.INSTANCE_ID_SCOPE, null);
+            String token = FirebaseInstanceId.getInstance().getToken();
             // [END get_token]
-            Log.i(TAG, "GCM Registration Token: " + token);
+            Log.i(TAG, "FCM Registration Token: " + token);
 
             // TODO: Implement this method to send any registration to your app's servers.
             sendRegistrationToServer(token);
@@ -47,7 +44,7 @@ public class RegistrationIntentService extends IntentService {
             // sent to your server. If the boolean is false, send the token to your server,
             // otherwise your server should have already received the token.
             sharedPreferences.edit().putBoolean(QuickstartPreferences.SENT_TOKEN_TO_SERVER, true).apply();
-            // [END register_for_gcm]
+            // [END register_for_fcm]
         } catch (Exception e) {
             Log.d(TAG, "Failed to complete token refresh", e);
             // If an exception happens while fetching the new token or updating our registration data
@@ -62,7 +59,7 @@ public class RegistrationIntentService extends IntentService {
     /**
      * Persist registration to third-party servers.
      *
-     * Modify this method to associate the user's GCM registration token with any server-side account
+     * Modify this method to associate the user's FCM registration token with any server-side account
      * maintained by your application.
      *
      * @param token The new token.

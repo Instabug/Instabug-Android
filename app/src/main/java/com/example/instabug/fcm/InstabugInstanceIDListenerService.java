@@ -1,13 +1,13 @@
-package com.example.instabug.gcm;
+package com.example.instabug.fcm;
 
 import android.content.Intent;
 
-import com.google.android.gms.iid.InstanceIDListenerService;
+import com.google.firebase.iid.FirebaseInstanceIdService;
 
 /**
  * Created by vezikon on 6/27/16.
  */
-public class InstabugInstanceIDListenerService extends InstanceIDListenerService {
+public class InstabugInstanceIDListenerService extends FirebaseInstanceIdService {
 
     private static final String TAG = "InstabugInstanceIDLS";
 

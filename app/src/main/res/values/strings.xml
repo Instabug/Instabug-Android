@@ -19,14 +19,21 @@
     <string name="maps">Maps</string>
     <string name="opengl">Open GL</string>
     <string name="tabs">Tabs</string>
-    <string name="action_send_bug_report">Send Bug Report</string>
-    <string name="action_send_feedback">Send Feedback</string>
+    <string name="action_show_instabug">Show Instabug</string>
     <string name="action_start_new_conversation">Start new conversation</string>
     <string name="action_show_conversation_list">Show conversation list</string>
     <string name="action_show_new_messages_count">Show new messages count</string>
     <string name="action_primary_color">Choose primary color</string>
-    <string name="action_show_intro_message">Show intro message</string>
+    <string name="action_show_live_onboarding_message">Show live onboarding message</string>
+    <string name="action_show_beta_onboarding_message">Show beta onboarding message</string>
     <string name="action_do_network_request">Do network request</string>
     <string name="action_send_handled_exception">Send handled exception</string>
-    <string name="action_crash_the_app">Crash the app</string>
+    <string name="action_crash_the_app">Crash the app!</string>
+    <string name="action_show_nps_survey">Show NPS Survey</string>
+    <string name="action_show_multiple_question_survey">Show multiple question survey</string>
+    <string name="action_show_feature_requests">Show feature requests</string>
+    <string name="action_show_settings">Settings</string>
+    <string name="action_show_invocation_events">Show Invocation Events</string>
+    <string name="action_change_theme">Change theme</string>
+    <string name="action_change_primary_color">Set primary color</string>
 </resources>
