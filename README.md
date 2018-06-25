@@ -18,16 +18,6 @@ Add this line to your build.gradle file.
 implementation 'com.instabug.library:instabug:5+'
 ```
 
-### Maven
-
-```xml
-<dependency>
-      <groupId>com.instabug.library</groupId>
-      <artifactId>instabug</artifactId>
-      <version>4+</version>
-</dependency>
-```
-
 ## Usage
 
 1. In your `Application` class add this line to your `onCreate` method.
