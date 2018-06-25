@@ -1,60 +1,64 @@
-Instabug Android SDK
-========
+# Instabug Android SDK
 
-An in-depth journey depicting all the ways to use [Instabug Android SDK][1].
+![Twitter](https://img.shields.io/badge/twitter-@Instabug-blue.svg)
 
-Instabug is a bug reporting and in-app feedback tool that provides a seamless two-way communication with your users and testers. They can [easily report bugs](https://instabug.com/bug-reporting) and Instabug will automatically capture all the information you would need to debug and iterate faster.
+Instabug is an in-app feedback and bug reporting tool for mobile apps. With just a simple shake, your users or beta testers can [report bugs](https://instabug.com/bug-reporting) or send in-app feedback and the SDK will capture an environment snapshot of your user's device including all console logs, [server-side network requests](https://instabug.com/network-logging) and bug reproduction steps compiling all these details in one organised dashboard to help you debug and fix bugs faster. 
 
-For more information check [Instabug.com][2].
+Instabug also provides you with a [reliable crash reporter](https://instabug.com/crash-reporting) that automatically captures a detailed report of the running environment, the different threads’ states, [the steps to reproduce the crash](https://instabug.com/user-steps), and the network request logs. All the data is captured automatically with no need for breadcrumbs, and you can always [reply back to your users](https://instabug.com/in-app-chat) and they will receive your messages within the app.
 
-Usage
---------
-Using Instabug is as easy as "Get ready, Get set, Go".
+For more info, visit [Instabug.com](https://www.instabug.com).
 
-1. <b>Adding Instabug to your dependencies</b> (Getting set)
+## Installation
 
-    ```groovy
-        implementation 'com.instabug.library:instabug:4.11.1'
-    ```
+### Gradle
 
-1. <b>Using Instabug</b> (Good to go!)
+Add this line to your build.gradle file.
 
-    * Initializing Instabug:
+```groovy
+implementation 'com.instabug.library:instabug:5+'
+```
 
-        In your `Application` class add the following:
-        ```java
-                @Override
-                public void onCreate() {
-                    super.onCreate();
-                    // ...
-                    new Instabug.Builder(this, "<YOUR_APP_TOKEN>")
-                            .setInvocationEvent(InstabugInvocationEvent.FLOATING_BUTTON)
-                            .build();
-                    // ...
-                }
-        ```
+### Maven
 
-For technical documentation check the [API reference][api_reference]
+```xml
+<dependency>
+      <groupId>com.instabug.library</groupId>
+      <artifactId>instabug</artifactId>
+      <version>4+</version>
+</dependency>
+```
 
-License
-=======
+## Usage
 
-    Copyright 2012 Instabug, Inc.
+1. In your `Application` class add this line to your `onCreate` method.
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+```java
+new Instabug.Builder(this, "APP_TOKEN").build();
+```
 
-       http://www.apache.org/licenses/LICENSE-2.0
+## Notes
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
+Some permissions are automatically added to your AndroidManifest.xml file. Some of them are required to be able to fetch some information like the network and wifi connection. Others are used to allow the user to attach images, videos, and audio recordings.
 
+Generally, the permission request doesn't appear unless the user attempts to use any of the features requiring the permission. The only exception, if you set the invocation event to be Screenshot. Then, the storage permission will be requested when the application launches.
 
- [1]: https://docs.instabug.com/docs/android-integration
- [2]: https://instabug.com/
- [api_reference]: https://github.com/Instabug/android-sample/wiki
+This behavior is happening with the screenshot invocation because there isn't any native event that tells the SDK that a screenshot has been captured. The only way to do it is to monitor the screenshots directory. The SDK is invoked once a screenshot is added to the directory while the application is active.
 
+```xml
+<uses-permission android:name=“android.permission.ACCESS_NETWORK_STATE” />
+<uses-permission android:name=“android.permission.WRITE_EXTERNAL_STORAGE” />
+<uses-permission android:name=“android.permission.READ_EXTERNAL_STORAGE” />
+<uses-permission android:name=“android.permission.ACCESS_WIFI_STATE” />
+<uses-permission android:name=“android.permission.RECORD_AUDIO” />
+<uses-permission android:name=“android.permission.MODIFY_AUDIO_SETTINGS” />
+```
+
+You can remove any of the permissions if you are not willing to use the feature associated with it as in the following example.
+
+```xml
+<uses-permission android:name=“android.permission.WRITE_EXTERNAL_STORAGE” tools:node=“remove”/>
+```
+
+## More
+
+You can also check out our [API Reference](https://instabug.com/public/android-api-reference/com/instabug/library/Instabug.html) for more detailed information about our SDK.
