@@ -13,10 +13,13 @@ import android.view.View;
 import com.example.instabug.BaseActivity;
 import com.example.instabug.R;
 import com.example.instabug.fcm.RegistrationIntentService;
+import com.instabug.bug.BugReporting;
+import com.instabug.featuresrequest.FeatureRequests;
 import com.instabug.library.Instabug;
 import com.instabug.library.logging.InstabugLog;
 import com.instabug.library.logging.InstabugNetworkLog;
 import com.instabug.library.ui.onboarding.WelcomeMessage;
+import com.instabug.survey.Surveys;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -62,7 +65,7 @@ public class MainActivity extends BaseActivity {
     }
 
     public void onShowInstabugClicked(View view) {
-        Instabug.invoke();
+        BugReporting.invoke();
     }
 
     public void onCrashTheAppClicked(View view) {
@@ -80,15 +83,15 @@ public class MainActivity extends BaseActivity {
     }
 
     public void showNPSSurvey(View view) {
-        Instabug.showSurvey("ulUaFocMCejDr3Ldd8VBaA");
+        Surveys.showSurvey("ulUaFocMCejDr3Ldd8VBaA");
     }
 
     public void showMultipleQuestionSurvey(View view) {
-        Instabug.showSurvey("AGI5OH47k3eEAIKj-yKDWA");
+        Surveys.showSurvey("AGI5OH47k3eEAIKj-yKDWA");
     }
 
     public void showFeatureRequests(View view) {
-        Instabug.showFeatureRequests();
+        FeatureRequests.show();
     }
 
     public void onShowSettingsClicked(View view) {

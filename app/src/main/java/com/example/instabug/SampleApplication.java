@@ -27,11 +27,12 @@ public class SampleApplication extends Application {
 
         //initialing instabug
         new Instabug.Builder(this, "48ad905e141bc665d064945f423aa414")
-                .setInvocationEvent(InstabugInvocationEvent.SHAKE)
+                .setInvocationEvents(InstabugInvocationEvent.SHAKE, InstabugInvocationEvent.SCREENSHOT_GESTURE,
+                        InstabugInvocationEvent.FLOATING_BUTTON, InstabugInvocationEvent.TWO_FINGER_SWIPE_LEFT)
                 .build();
 
         //Choosing instabug theme
-        Instabug.setTheme(InstabugColorTheme.InstabugColorThemeLight);
+        Instabug.setColorTheme(InstabugColorTheme.InstabugColorThemeLight);
         //Choosing type of attachments allowed
         //1. initial screenshot, 2. extra screenshot, 3. image from gallery, 4. voice note
         //5. screen record
