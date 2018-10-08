@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 28
 
     defaultConfig {
         applicationId "com.example.instabug"
         minSdkVersion 15
-        targetSdkVersion 27
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
@@ -27,6 +27,11 @@ android {
     dexOptions {
         javaMaxHeapSize "4g"
     }
+
+    lintOptions {
+        abortOnError false
+    }
+
 }
 
 repositories {
@@ -50,7 +55,7 @@ dependencies {
     // TODO add the following 2 lines if you exclude io.reactivex from Instabug
 //    implementation 'io.reactivex:rxjava:1.0.13'
 //    implementation 'io.reactivex:rxandroid:1.0.1'
-    implementation('com.instabug.library:instabug:8.0.2') {
+    implementation('com.instabug.library:instabug:8.0.11') {
         // TODO uncomment this line to exclude RxJava from Instabug and use your own version
 //        exclude group: 'io.reactivex'
 
