@@ -1,6 +1,11 @@
 Change Log
 ==========
 
+Version 8.1.1 *(2019-03-03)*
+----------------------------
+* In this version of the Instabug SDK, various APIs have been deprecated. Please refer to this migration guide for detailed instructions on how to migrate from previous versions of the SDK to version 8.1.
+
+
 Version 4.11.1 *(2018-02-27)*
 ----------------------------
 * Fix issue with proguard
