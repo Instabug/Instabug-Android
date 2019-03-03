@@ -27,7 +27,7 @@ public class SampleApplication extends Application {
 
         //initialing instabug
         new Instabug.Builder(this, "48ad905e141bc665d064945f423aa414")
-                .setInvocationEvents(InstabugInvocationEvent.SHAKE, InstabugInvocationEvent.SCREENSHOT_GESTURE,
+                .setInvocationEvents(InstabugInvocationEvent.SHAKE, InstabugInvocationEvent.SCREENSHOT,
                         InstabugInvocationEvent.FLOATING_BUTTON, InstabugInvocationEvent.TWO_FINGER_SWIPE_LEFT)
                 .build();
 

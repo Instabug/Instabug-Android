@@ -173,7 +173,7 @@ public class MainActivity extends BaseActivity {
 
                 //logging network request to instabug
                 InstabugNetworkLog networkLog = new InstabugNetworkLog();
-                networkLog.Log(urlConnection, jsonParam.toString(), moviesJsonStr);
+                networkLog.log(urlConnection, jsonParam.toString(), moviesJsonStr);
 
                 return moviesJsonStr;
             } catch (IOException e) {

@@ -1,11 +1,5 @@
 package com.example.instabug.fcm;
 
-import com.example.instabug.R;
-import com.example.instabug.ui.activities.MainActivity;
-import com.google.firebase.messaging.FirebaseMessagingService;
-import com.google.firebase.messaging.RemoteMessage;
-import com.instabug.library.Instabug;
-
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -14,6 +8,12 @@ import android.media.RingtoneManager;
 import android.net.Uri;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
+
+import com.example.instabug.R;
+import com.example.instabug.ui.activities.MainActivity;
+import com.google.firebase.messaging.FirebaseMessagingService;
+import com.google.firebase.messaging.RemoteMessage;
+import com.instabug.chat.Replies;
 
 /**
  * Created by vezikon on 6/27/16.
@@ -30,9 +30,9 @@ public class InstabugFCMListenerService extends FirebaseMessagingService {
         Log.d(TAG, "Message: " + message);
 
         //Check first if notification related to Instabug or not
-        if (Instabug.isInstabugNotification(remoteMessage.getData())) {
+        if (Replies.isInstabugNotification(remoteMessage.getData())) {
             //Shown notification related to Instabug
-            Instabug.showNotification(remoteMessage.getData());
+            Replies.showNotification(remoteMessage.getData());
         } else {
             sendNotification(message);
         }
