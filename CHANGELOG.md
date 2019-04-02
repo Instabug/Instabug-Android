@@ -1,6 +1,14 @@
 Change Log
 ==========
 
+Version 8.2.0 *(2019-03-26)*
+----------------------------
+* Introducing new in-app survey templates: What’s New, Version Update, and App Ratings.
+
+Version 8.1.2 *(2019-03-06)*
+----------------------------
+* Bug fix: making the Surveys setState API public.
+
 Version 8.1.1 *(2019-03-03)*
 ----------------------------
 * In this version of the Instabug SDK, various APIs have been deprecated. Please refer to this migration guide for detailed instructions on how to migrate from previous versions of the SDK to version 8.1.
