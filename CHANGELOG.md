@@ -1,6 +1,10 @@
 Change Log
 ==========
 
+Version 8.2.1 *(2019-04-08)*
+----------------------------
+* Bug fix: welcome message title override key was overriding subtitle by wrong.
+
 Version 8.2.0 *(2019-03-26)*
 ----------------------------
 * Introducing new in-app survey templates: What’s New, Version Update, and App Ratings.
