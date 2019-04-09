@@ -52,8 +52,8 @@ dependencies {
     implementation "com.android.support:design:$rootProject.ext.androidSupport"
     implementation "com.android.support:appcompat-v7:$rootProject.ext.androidSupport"
 
-    implementation 'com.google.firebase:firebase-core:16.0.0'
-    implementation 'com.google.firebase:firebase-messaging:17.0.0'
+    implementation 'com.google.firebase:firebase-core:16.0.8'
+    implementation 'com.google.firebase:firebase-messaging:17.5.0'
 
     //TODO add the following 2 lines if you exclude io.reactivex from Instabug
     //implementation 'io.reactivex:rxjava:1.0.13'
