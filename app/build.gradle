@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 28
@@ -40,6 +42,7 @@ repositories {
         url "https://oss.sonatype.org/content/repositories/snapshots"
     }
     google()
+    mavenCentral()
 }
 
 
@@ -63,4 +66,5 @@ dependencies {
      //exclude group: 'com.android.support'
     }
     implementation 'petrov.kristiyan:colorpicker-library:1.1.8'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
