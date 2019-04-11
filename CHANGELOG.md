@@ -1,6 +1,10 @@
 Change Log
 ==========
 
+Version 8.2.2 *(2019-04-11)*
+----------------------------
+* Bug fix: Removing duplicate color resource to solve a build error.
+
 Version 8.2.1 *(2019-04-08)*
 ----------------------------
 * Bug fix: welcome message title override key was overriding subtitle by wrong.
