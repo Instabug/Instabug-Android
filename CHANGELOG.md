@@ -1,6 +1,14 @@
 Change Log
 ==========
 
+Version 8.3.0 *(2019-05-06)*
+----------------------------
+* Users now will be able to see the auto screen recordings before submitting a bug report.
+* View hierarchy is back again.
+* Auto screen recording will work with bug reporting only.
+* Surveys & Announcements Localization support: you can now create localized surveys and announcements with support for over 20 languages.
+* Various Bug Fixes.
+
 Version 8.2.2 *(2019-04-11)*
 ----------------------------
 * Bug fix: Removing duplicate color resource to solve a build error.
