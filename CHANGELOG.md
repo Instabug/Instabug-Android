@@ -1,6 +1,10 @@
 Change Log
 ==========
 
+Version 8.3.1 *(2019-05-11)*
+----------------------------
+* Bug fix: Fixing an issue with proguard.
+
 Version 8.3.0 *(2019-05-06)*
 ----------------------------
 * Users now will be able to see the auto screen recordings before submitting a bug report.
