@@ -1,6 +1,18 @@
 Change Log
 ==========
 
+Version 8.4.0 *(2019-05-26)*
+----------------------------
+* Putting the screenshots back in the Repro Steps.
+* Support private views on Android
+* Archiving Session Count In SDK
+* Archiving Survey Interactions In SDK
+* Archiving User Attributes In SDK
+* Support Custom URL in App Version Update
+* Add localization support to Surveys
+* SDK improvements.
+
+
 Version 8.3.1 *(2019-05-11)*
 ----------------------------
 * Bug fix: Fixing an issue with proguard.
