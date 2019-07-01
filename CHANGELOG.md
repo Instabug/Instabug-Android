@@ -1,6 +1,19 @@
 Change Log
 ==========
 
+Version 8.4.0 *(2019-07-01)*
+----------------------------
+* With SDK V8.5, we’re introducing major improvements to the Repro Steps feature to make it more readable and usable for both technical and non-technical customers:
+  1. Improving the algorithm we follow to capture text from the app’s UI to help your users understand which part of the app their user was interacting with.
+  2. Capturing the icon when the user interacts with buttons or navigation items.
+  3. Adding support to new UI components: switch, text fields, and sliders.
+  4. Instabug can now capture all the user steps and repro steps out of the box without any required code addition on your side.
+
+* We've removed a previous restriction on the App Version field in surveys targeting. You can now target surveys/announcements by app version no matter what format you use.
+* Adding new API to capture screenshots Using MediaProjection to capture H/W accelerated views.
+* Various Bug Fixes
+
+
 Version 8.4.0 *(2019-05-26)*
 ----------------------------
 * Putting the screenshots back in the Repro Steps.
