@@ -65,7 +65,7 @@ public class MainActivity extends BaseActivity {
     }
 
     public void onShowInstabugClicked(View view) {
-        BugReporting.invoke();
+        BugReporting.show(BugReporting.ReportType.BUG);
     }
 
     public void onCrashTheAppClicked(View view) {

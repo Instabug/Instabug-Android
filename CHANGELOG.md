@@ -1,7 +1,13 @@
 Change Log
 ==========
 
-Version 8.4.0 *(2019-07-01)*
+Version 8.6.0 *(2019-08-05)*
+----------------------------
+* We're updating the SDK flow when they pick "Ask a question" to match with "Report a bug" and "Suggest an improvement". As part of the change, some APIs have been deprecated. While they are still functional, we recommend that you start using the new APIs, as the deprecated ones will be completely removed in a future release. 
+* Various bug fixes and stability improvements.
+
+
+Version 8.5.0 *(2019-07-01)*
 ----------------------------
 * With SDK V8.5, we’re introducing major improvements to the Repro Steps feature to make it more readable and usable for both technical and non-technical customers:
   1. Improving the algorithm we follow to capture text from the app’s UI to help your users understand which part of the app their user was interacting with.
