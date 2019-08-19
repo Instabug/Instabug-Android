@@ -1,6 +1,10 @@
 Change Log
 ==========
 
+Version 8.6.1 *(2019-08-19)*
+----------------------------
+* Introducing our new logo and branding.  Meet the new Instabug: the platform for Real-Time Contextual Insights.
+
 Version 8.6.0 *(2019-08-05)*
 ----------------------------
 * We're updating the SDK flow when they pick "Ask a question" to match with "Report a bug" and "Suggest an improvement". As part of the change, some APIs have been deprecated. While they are still functional, we recommend that you start using the new APIs, as the deprecated ones will be completely removed in a future release. 
