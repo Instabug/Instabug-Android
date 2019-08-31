@@ -1,7 +1,7 @@
 Change Log
 ==========
 
-Version 8.6.1 *(2019-08-27)*
+Version 8.6.2 *(2019-08-27)*
 ----------------------------
 * Bug fix: Fixing ANR issue
 
