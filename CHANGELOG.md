@@ -1,6 +1,10 @@
 Change Log
 ==========
 
+Version 8.6.3 *(2019-08-31)*
+----------------------------
+* Introducing our new logo and branding.  Meet the new Instabug: the platform for Real-Time Contextual Insights \[Logo Updated]
+
 Version 8.6.2 *(2019-08-27)*
 ----------------------------
 * Bug fix: Fixing ANR issue
