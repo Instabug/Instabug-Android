@@ -55,7 +55,7 @@ dependencies {
     //TODO add the following 2 lines if you exclude io.reactivex from Instabug
     //implementation 'io.reactivex:rxjava:1.0.13'
     //implementation 'io.reactivex:rxandroid:1.0.1'
-    implementation('com.instabug.library:instabug:8.6.3') {
+    implementation('com.instabug.library:instabug:8.7.0') {
     // TODO uncomment this line to exclude RxJava from Instabug and use your own version
     // exclude group: 'io.reactivex'
 

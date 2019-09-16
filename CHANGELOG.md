@@ -1,6 +1,17 @@
 Change Log
 ==========
 
+Version 8.7.0 *(2019-09-16)*
+----------------------------
+* More Detailed Instabug Prompt:
+    * To make sure your users pick the correct option when they invoke Instabug, we added a description to each option to help them decide whether their report is a bug, an improvement, or a support question.
+* Nested Report Categories:
+    * You can now benefit from flexible hierarchies while setting up your report categories. Add up to 4 levels deep and up to 20 categories in each level.
+    * Each category consists of a title and a description. A description helps your users understand when to select a specific option.
+    * With Nested Categories, you can reach a more efficient automated workflow. Auto-reply to your customers with the relevant answer they need based on their selection of categories and automatically route the report to the correct team.
+    * You can find more details about how to benefit from the Report Categories here: https://docs.instabug.com/docs/reporting-categories
+* Detecting app status during a crash (foreground/background)
+
 Version 8.6.3 *(2019-08-31)*
 ----------------------------
 * Introducing our new logo and branding.  Meet the new Instabug: the platform for Real-Time Contextual Insights \[Logo Updated]
