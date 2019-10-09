@@ -13,11 +13,14 @@ import android.view.View;
 import com.example.instabug.BaseActivity;
 import com.example.instabug.R;
 import com.example.instabug.fcm.RegistrationIntentService;
+import com.example.instabug.network.GitHubClient;
+import com.example.instabug.network.RepoList;
 import com.instabug.bug.BugReporting;
 import com.instabug.featuresrequest.FeatureRequests;
 import com.instabug.library.Instabug;
 import com.instabug.library.logging.InstabugLog;
 import com.instabug.library.logging.InstabugNetworkLog;
+import com.instabug.library.okhttplogger.InstabugOkhttpInterceptor;
 import com.instabug.library.ui.onboarding.WelcomeMessage;
 import com.instabug.survey.Surveys;
 
@@ -31,6 +34,14 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.List;
+
+import okhttp3.OkHttpClient;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends BaseActivity {
 
@@ -48,6 +59,9 @@ public class MainActivity extends BaseActivity {
         setSupportActionBar(toolbar);
 
         doNetworkRequest();
+
+
+        doNetworkRequestUsingOkHttpInterceptor();
     }
 
     private void registerFCM() {
@@ -100,6 +114,35 @@ public class MainActivity extends BaseActivity {
 
     public void doNetworkRequest() {
         new FetchMoviesData().execute();
+    }
+
+    public void doNetworkRequestUsingOkHttpInterceptor() {
+       Retrofit.Builder builder = new Retrofit.Builder()
+                .baseUrl("https://api.github.com")
+                .addConverterFactory(GsonConverterFactory.create());
+
+        OkHttpClient okHttpCallback = new OkHttpClient.Builder()
+                .addNetworkInterceptor(new InstabugOkhttpInterceptor())
+                .build();
+
+        Retrofit retrofit = builder.client(okHttpCallback).build();
+
+        GitHubClient client = retrofit.create(GitHubClient.class);
+
+        Call<List<RepoList>> call = client.UserRepositories();
+
+        call.enqueue(new Callback<List<RepoList>>() {
+            @Override
+            public void onResponse(Call<List<RepoList>> call, Response<List<RepoList>> response) {
+                Log.i("instabug", "success requestBody size" + response.body().size());
+            }
+
+            @Override
+            public void onFailure(Call<List<RepoList>> call, Throwable t) {
+
+            }
+        });
+
     }
 
     public void onHeaderImageClicked() {

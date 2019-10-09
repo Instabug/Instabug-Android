@@ -27,7 +27,7 @@ public class SampleApplication extends Application {
         super.onCreate();
 
         //initialing instabug
-        new Instabug.Builder(this, "48ad905e141bc665d064945f423aa414")
+        new Instabug.Builder(this, "your-token-here")
                 .setInvocationEvents(InstabugInvocationEvent.SHAKE, InstabugInvocationEvent.SCREENSHOT,
                         InstabugInvocationEvent.FLOATING_BUTTON, InstabugInvocationEvent.TWO_FINGER_SWIPE_LEFT)
                 .build();

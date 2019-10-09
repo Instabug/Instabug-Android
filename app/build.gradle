@@ -55,12 +55,17 @@ dependencies {
     //TODO add the following 2 lines if you exclude io.reactivex from Instabug
     //implementation 'io.reactivex:rxjava:1.0.13'
     //implementation 'io.reactivex:rxandroid:1.0.1'
-    implementation('com.instabug.library:instabug:8.6.3') {
+    implementation('com.instabug.library:instabug:8.7.0') {
     // TODO uncomment this line to exclude RxJava from Instabug and use your own version
     // exclude group: 'io.reactivex'
 
      // TODO uncomment next line if you're facing compilation issue in build.gradle about gms different versions
      //exclude group: 'com.android.support'
     }
+    implementation('com.instabug.library:instabug-with-okhttp-interceptor:8.7.0')
     implementation 'petrov.kristiyan:colorpicker-library:1.1.8'
+
+    implementation "com.squareup.retrofit2:retrofit:2.5.0"
+    implementation "com.squareup.retrofit2:converter-gson:2.5.0"
+
 }

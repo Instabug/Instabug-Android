@@ -18,3 +18,22 @@
 -dontwarn butterknife.internal.**
 -keep class com.google.firebase.provider.FirebaseInitProvider
 -keep class com.example.instabug.**
+-keep class retrofit2.** {*;}
+-keep class com.example.instabug.network.RepoList {*;}
+
+-keep class com.squareup.okhttp.** { *; }
+-keep interface com.squareup.okhttp.** { *; }
+
+-dontwarn com.squareup.okhttp.**
+-dontwarn okio.**
+
+-keepattributes Signature
+-keepattributes *Annotation*
+-keep class okhttp3.** { *; }
+-keep interface okhttp3.** { *; }
+
+-dontwarn okhttp3.**
+-keepclassmembernames class kotlinx.** {
+    volatile <fields>;
+}
+-keepnames class kotlinx.** { *; }
