@@ -1,6 +1,9 @@
 Change Log
 ==========
 
+## [Deprecated] 
+Please refer to our [releases](https://github.com/Instabug/Instabug-Android/releases) page for latest changes and releases.
+
 Version 8.7.0 *(2019-09-16)*
 ----------------------------
 * More Detailed Instabug Prompt:
