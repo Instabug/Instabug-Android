@@ -2,7 +2,7 @@ package com.example.instabug;
 
 import android.app.Application;
 import android.content.Context;
-import android.support.multidex.MultiDex;
+import androidx.multidex.MultiDex;
 
 import com.instabug.bug.BugReporting;
 import com.instabug.library.Instabug;

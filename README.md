@@ -15,7 +15,7 @@ For more info, visit [Instabug.com](https://www.instabug.com).
 Add this line to your build.gradle file.
 
 ```groovy
-implementation 'com.instabug.library:instabug:8.7.2'
+implementation 'com.instabug.library:instabug:9.0.1'
 ```
 
 ## Usage
