@@ -51,4 +51,4 @@ You can remove any of the permissions if you are not willing to use the feature 
 
 ## More
 
-You can also check out our [API Reference](https://instabug.com/public/android-api-reference/com/instabug/library/Instabug.html) for more detailed information about our SDK.
+You can also check out our [API Reference](https://docs.instabug.com/reference) for more detailed information about our SDK.
