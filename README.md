@@ -20,7 +20,7 @@ implementation 'com.instabug.library:instabug:9.1.4'
 
 ## Usage
 
-1. In your `Application` class add this line to your `onCreate` method.
+In your `Application` class add this line to your `onCreate` method.
 
 ```java
 new Instabug.Builder(this, "APP_TOKEN").build();
