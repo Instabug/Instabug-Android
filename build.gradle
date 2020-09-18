@@ -27,6 +27,6 @@ ext {
     multidex = "2.0.1"
     material = "1.0.0"
     androidXAppCompat = "1.1.0"
-    instabugSDK = "9.1.7"
+    instabugSDK = "9.1.8"
     colorPicker = "1.1.8"
 }
