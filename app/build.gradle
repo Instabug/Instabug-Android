@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+// apply instbaug APM plugin for capturing network requests
+apply plugin: 'instabug-apm'
 
 android {
     compileSdkVersion 29
@@ -68,7 +70,7 @@ dependencies {
 
 task uploadMappingFiles(type: Exec) {
     android.applicationVariants.all {
-        if (it.variantData.variantConfiguration.buildType.name == "release" && it.mappingFile != null && it.mappingFile.exists()) {
+        if (it.buildType.name == "release" && it.mappingFile != null && it.mappingFile.exists()) {
             commandLine 'sh', '../upload_mapping.sh', "APP_TOKEN", it.versionCode, it.versionName, it.mappingFile
         }
     }

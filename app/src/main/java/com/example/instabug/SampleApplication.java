@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import androidx.multidex.MultiDex;
 
+import com.instabug.apm.APM;
 import com.instabug.bug.BugReporting;
 import com.instabug.library.Instabug;
 import com.instabug.library.InstabugColorTheme;
@@ -27,7 +28,7 @@ public class SampleApplication extends Application {
         super.onCreate();
 
         //initialing instabug
-        new Instabug.Builder(this, "48ad905e141bc665d064945f423aa414")
+        new Instabug.Builder(this, "30ec799583080bebc59c5b25457ffeac")
                 .setInvocationEvents(InstabugInvocationEvent.SHAKE, InstabugInvocationEvent.SCREENSHOT,
                         InstabugInvocationEvent.FLOATING_BUTTON, InstabugInvocationEvent.TWO_FINGER_SWIPE_LEFT)
                 .build();
@@ -59,5 +60,8 @@ public class SampleApplication extends Application {
         Instabug.setUserAttribute("USER_TYPE", "instabug user");
 
         BugReporting.setAutoScreenRecordingEnabled(true);
+
+        APM.setEnabled(true);
+
     }
 }
