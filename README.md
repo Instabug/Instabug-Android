@@ -22,10 +22,11 @@ implementation 'com.instabug.library:instabug:10.0.1'
 
 In your `Application` class add this line to your `onCreate` method.
 
+**Java**
 ```java
 new Instabug.Builder(this, "APP_TOKEN").build();
 ```
-
+**Kotlin**
 ```kotlin
 Instabug.Builder(this, "APP_TOKEN").build()
 ```
