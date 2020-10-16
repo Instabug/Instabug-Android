@@ -26,6 +26,10 @@ In your `Application` class add this line to your `onCreate` method.
 new Instabug.Builder(this, "APP_TOKEN").build();
 ```
 
+```kotlin
+Instabug.Builder(this, "APP_TOKEN").build()
+```
+
 ## Notes
 
 Some permissions are automatically added to your AndroidManifest.xml file. Some of them are required to be able to fetch some information like the network and wifi connection. Others are used to allow the user to attach images, videos, and audio recordings.
