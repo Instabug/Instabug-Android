@@ -1,6 +1,6 @@
 # Instabug Android SDK
 
-![Twitter](https://img.shields.io/badge/twitter-@Instabug-blue.svg)
+[![Maven Central](https://img.shields.io/maven-central/v/com.instabug.library/instabug.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22com.instabug.library%22%20AND%20a:%22instabug%22) ![Twitter](https://img.shields.io/badge/twitter-@Instabug-blue.svg)
 
 Instabug is an in-app feedback and bug reporting tool for mobile apps. With just a simple shake, your users or beta testers can [report bugs](https://instabug.com/bug-reporting) or send in-app feedback and the SDK will capture an environment snapshot of your user's device including all console logs, [server-side network requests](https://instabug.com/network-logging) and bug reproduction steps compiling all these details in one organised dashboard to help you debug and fix bugs faster. 
 
