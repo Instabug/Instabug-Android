@@ -8,7 +8,7 @@ buildscript {
         multidex = "2.0.1"
         material = "1.0.0"
         androidXAppCompat = "1.1.0"
-        instabugSDK = "10.4.0"
+        instabugSDK = "10.4.1"
         colorPicker = "1.1.8"
     }
     repositories {
