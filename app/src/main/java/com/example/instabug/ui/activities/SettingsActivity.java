@@ -9,7 +9,7 @@ import android.view.View;
 
 import com.example.instabug.BaseActivity;
 import com.example.instabug.R;
-import com.instabug.bug.BugReporting;
+//import com.instabug.bug.BugReporting;
 import com.instabug.library.Instabug;
 import com.instabug.library.InstabugColorTheme;
 import com.instabug.library.invocation.InstabugInvocationEvent;
@@ -61,7 +61,7 @@ public class SettingsActivity extends BaseActivity {
                     }
                 }
                 // set new invocation events here
-                BugReporting.setInvocationEvents(selectedEvents.toArray(new InstabugInvocationEvent[selectedEvents.size()]));
+//                BugReporting.setInvocationEvents(selectedEvents.toArray(new InstabugInvocationEvent[selectedEvents.size()]));
             }
         });
         builder.show();

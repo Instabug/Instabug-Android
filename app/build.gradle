@@ -1,6 +1,6 @@
 apply plugin: 'com.android.application'
 // apply instbaug APM plugin for capturing network requests
-apply plugin: 'instabug-apm'
+//apply plugin: 'instabug-apm'
 
 android {
     compileSdkVersion 29
@@ -57,7 +57,7 @@ dependencies {
     //TODO add the following 2 lines if you exclude io.reactivex from Instabug
     //implementation 'io.reactivex:rxjava:1.0.13'
     //implementation 'io.reactivex:rxandroid:1.0.1'
-    implementation("com.instabug.library:instabug:$rootProject.ext.instabugSDK") {
+    implementation("com.instabug.library:instabug-survey:$rootProject.ext.instabugSDK") {
         // TODO uncomment this line to exclude RxJava from Instabug and use your own version
         // exclude group: 'io.reactivex'
 

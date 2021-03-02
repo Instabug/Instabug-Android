@@ -13,8 +13,8 @@ import android.view.View;
 import com.example.instabug.BaseActivity;
 import com.example.instabug.R;
 import com.example.instabug.fcm.RegistrationIntentService;
-import com.instabug.bug.BugReporting;
-import com.instabug.featuresrequest.FeatureRequests;
+//import com.instabug.bug.BugReporting;
+//import com.instabug.featuresrequest.FeatureRequests;
 import com.instabug.library.Instabug;
 import com.instabug.library.logging.InstabugLog;
 import com.instabug.library.logging.InstabugNetworkLog;
@@ -65,7 +65,7 @@ public class MainActivity extends BaseActivity {
     }
 
     public void onShowInstabugClicked(View view) {
-        BugReporting.show(BugReporting.ReportType.BUG);
+//        BugReporting.show(BugReporting.ReportType.BUG);
     }
 
     public void onCrashTheAppClicked(View view) {
@@ -91,7 +91,7 @@ public class MainActivity extends BaseActivity {
     }
 
     public void showFeatureRequests(View view) {
-        FeatureRequests.show();
+//        FeatureRequests.show();
     }
 
     public void onShowSettingsClicked(View view) {

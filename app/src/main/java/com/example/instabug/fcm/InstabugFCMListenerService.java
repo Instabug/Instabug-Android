@@ -13,7 +13,7 @@ import com.example.instabug.R;
 import com.example.instabug.ui.activities.MainActivity;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
-import com.instabug.chat.Replies;
+//import com.instabug.chat.Replies;
 
 /**
  * Created by vezikon on 6/27/16.
@@ -29,13 +29,13 @@ public class InstabugFCMListenerService extends FirebaseMessagingService {
         Log.d(TAG, "From: " + remoteMessage.getFrom());
         Log.d(TAG, "Message: " + message);
 
-        //Check first if notification related to Instabug or not
-        if (Replies.isInstabugNotification(remoteMessage.getData())) {
-            //Shown notification related to Instabug
-            Replies.showNotification(remoteMessage.getData());
-        } else {
+//        //Check first if notification related to Instabug or not
+//        if (Replies.isInstabugNotification(remoteMessage.getData())) {
+//            //Shown notification related to Instabug
+//            Replies.showNotification(remoteMessage.getData());
+//        } else {
             sendNotification(message);
-        }
+//        }
 
     }
 

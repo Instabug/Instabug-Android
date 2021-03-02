@@ -4,8 +4,8 @@ import android.app.Application;
 import android.content.Context;
 import androidx.multidex.MultiDex;
 
-import com.instabug.apm.APM;
-import com.instabug.bug.BugReporting;
+//import com.instabug.apm.APM;
+//import com.instabug.bug.BugReporting;
 import com.instabug.library.Instabug;
 import com.instabug.library.InstabugColorTheme;
 import com.instabug.library.InstabugCustomTextPlaceHolder;
@@ -59,9 +59,9 @@ public class SampleApplication extends Application {
         //setting user attributes
         Instabug.setUserAttribute("USER_TYPE", "instabug user");
 
-        BugReporting.setAutoScreenRecordingEnabled(true);
+//        BugReporting.setAutoScreenRecordingEnabled(true);
 
-        APM.setEnabled(true);
+//        APM.setEnabled(true);
 
     }
 }

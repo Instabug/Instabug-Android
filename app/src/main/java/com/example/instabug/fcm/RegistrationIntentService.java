@@ -8,7 +8,7 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import android.util.Log;
 
 import com.google.firebase.iid.FirebaseInstanceId;
-import com.instabug.chat.Replies;
+//import com.instabug.chat.Replies;
 
 
 /**
@@ -67,7 +67,7 @@ public class RegistrationIntentService extends IntentService {
      */
     private void sendRegistrationToServer(String token) {
         // send your registration token to Instabug
-        Replies.setPushNotificationRegistrationToken(token);
+//        Replies.setPushNotificationRegistrationToken(token);
     }
 
 }
