@@ -64,6 +64,7 @@ dependencies {
         // TODO uncomment next line if you're facing compilation issue in build.gradle about gms different versions
         //exclude group: 'com.android.support'
     }
+    implementation("com.instabug.library:instabug-ndk-crash:$rootProject.ext.instabugSDK")
     implementation "petrov.kristiyan:colorpicker-library:$rootProject.ext.colorPicker"
 }
 
