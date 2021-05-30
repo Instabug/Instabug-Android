@@ -3,12 +3,12 @@ apply plugin: 'com.android.application'
 apply plugin: 'instabug-apm'
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 30
 
     defaultConfig {
         applicationId "com.example.instabug"
         minSdkVersion 15
-        targetSdkVersion 28
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
@@ -66,6 +66,8 @@ dependencies {
     }
     implementation("com.instabug.library:instabug-ndk-crash:$rootProject.ext.instabugSDK")
     implementation "petrov.kristiyan:colorpicker-library:$rootProject.ext.colorPicker"
+    implementation "androidx.fragment:fragment-ktx:$rootProject.ext.fragmentKtx"
+
 }
 
 
