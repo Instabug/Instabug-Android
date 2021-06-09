@@ -65,7 +65,7 @@ dependencies {
         //exclude group: 'com.android.support'
     }
     implementation("com.instabug.library:instabug-ndk-crash:$rootProject.ext.instabugSDK")
-    implementation "petrov.kristiyan:colorpicker-library:$rootProject.ext.colorPicker"
+    implementation "com.github.skydoves:colorpickerview:$rootProject.ext.colorPicker"
     implementation "androidx.fragment:fragment-ktx:$rootProject.ext.fragmentKtx"
 
 }
