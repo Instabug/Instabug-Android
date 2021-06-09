@@ -13,11 +13,13 @@ import com.instabug.bug.BugReporting;
 import com.instabug.library.Instabug;
 import com.instabug.library.InstabugColorTheme;
 import com.instabug.library.invocation.InstabugInvocationEvent;
+import com.skydoves.colorpickerview.ColorEnvelope;
+import com.skydoves.colorpickerview.ColorPickerDialog;
+import com.skydoves.colorpickerview.listeners.ColorEnvelopeListener;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import petrov.kristiyan.colorpicker.ColorPicker;
 
 public class SettingsActivity extends BaseActivity {
 
@@ -92,19 +94,27 @@ public class SettingsActivity extends BaseActivity {
     }
 
     public void onChangePrimaryColorClicked(View view) {
-        ColorPicker colorPicker = new ColorPicker(this);
-        colorPicker.show();
-        colorPicker.setOnChooseColorListener(new ColorPicker.OnChooseColorListener() {
-            @Override
-            public void onChooseColor(int position, int color) {
-                Instabug.setPrimaryColor(color);
-            }
-
-            @Override
-            public void onCancel() {
-                // put code
-            }
-        });
+        new ColorPickerDialog.Builder(this)
+                .setTitle("ColorPicker Dialog")
+                .setPreferenceName("MyColorPickerDialog")
+                .setPositiveButton(getString(android.R.string.ok),
+                        new ColorEnvelopeListener() {
+                            @Override
+                            public void onColorSelected(ColorEnvelope envelope, boolean fromUser) {
+                                Instabug.setPrimaryColor(envelope.getColor());
+                            }
+                        })
+                .setNegativeButton(getString(android.R.string.cancel),
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                dialogInterface.dismiss();
+                            }
+                        })
+                .attachAlphaSlideBar(true) // the default value is true.
+                .attachBrightnessSlideBar(true)  // the default value is true.
+                .setBottomSpace(12) // set a bottom space between the last slidebar and buttons.
+                .show();
 
     }
 }
