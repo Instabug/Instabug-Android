@@ -1,4 +1,4 @@
-Copyright (C) 2014 Instabug Permission is hereby granted to use this framework as is, modification are not allowed.
+Copyright (C) 2021 Instabug Permission is hereby granted to use this framework as is, modification are not allowed.
 All rights reserved.
         
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
