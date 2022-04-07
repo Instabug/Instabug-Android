@@ -1,5 +1,7 @@
 package com.example.instabug;
 
+import static com.instabug.library.settings.SettingsManager.VERBOSE;
+
 import android.app.Application;
 import android.content.Context;
 import androidx.multidex.MultiDex;
@@ -9,6 +11,7 @@ import com.instabug.bug.BugReporting;
 import com.instabug.library.Instabug;
 import com.instabug.library.InstabugColorTheme;
 import com.instabug.library.InstabugCustomTextPlaceHolder;
+import com.instabug.library.LogLevel;
 import com.instabug.library.internal.module.InstabugLocale;
 import com.instabug.library.invocation.InstabugInvocationEvent;
 import com.instabug.library.ui.onboarding.WelcomeMessage;
@@ -31,6 +34,7 @@ public class SampleApplication extends Application {
         new Instabug.Builder(this, "token")
                 .setInvocationEvents(InstabugInvocationEvent.SHAKE, InstabugInvocationEvent.SCREENSHOT,
                         InstabugInvocationEvent.FLOATING_BUTTON, InstabugInvocationEvent.TWO_FINGER_SWIPE_LEFT)
+                .setSdkDebugLogsLevel(LogLevel.VERBOSE) // <--- don't use this in production
                 .build();
 
         //Choosing instabug theme
@@ -45,9 +49,6 @@ public class SampleApplication extends Application {
                 InstabugLocale.SIMPLIFIED_CHINESE.getCountry()));
         Instabug.setLocale(new Locale(InstabugLocale.FRENCH.getCode()));
         Instabug.setLocale(Locale.ENGLISH);
-
-        //To show instabug debug logs if necessary
-        Instabug.setDebugEnabled(true);
 
         //Settings custom strings to replace instabug's strings
         InstabugCustomTextPlaceHolder placeHolder = new InstabugCustomTextPlaceHolder();
