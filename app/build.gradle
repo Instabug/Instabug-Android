@@ -37,10 +37,10 @@ android {
 }
 
 repositories {
-    maven {
-        // TODO add this only if interested in getting SNAPSHOT releases
-        url "https://oss.sonatype.org/content/repositories/snapshots"
-    }
+//    maven {
+//        // TODO add this only if interested in getting SNAPSHOT releases
+//        url "https://oss.sonatype.org/content/repositories/snapshots"
+//    }
     google()
 }
 
