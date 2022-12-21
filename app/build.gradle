@@ -1,14 +1,16 @@
 apply plugin: 'com.android.application'
+//Un-comment after adding google-services.json file
+//apply plugin: 'com.google.gms.google-services'
 // apply instbaug APM plugin for capturing network requests
 apply plugin: 'instabug-apm'
 
 android {
-    compileSdkVersion 32
+    compileSdkVersion 33
 
     defaultConfig {
         applicationId "com.example.instabug"
-        minSdkVersion 15
-        targetSdkVersion 32
+        minSdkVersion 19
+        targetSdkVersion 33
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
@@ -51,8 +53,8 @@ dependencies {
     implementation "com.google.android.material:material:$rootProject.ext.material"
     implementation "androidx.appcompat:appcompat:$rootProject.ext.androidXAppCompat"
 
-    implementation 'com.google.firebase:firebase-core:16.0.0'
-    implementation 'com.google.firebase:firebase-messaging:17.0.0'
+    implementation 'com.google.firebase:firebase-core:21.1.1'
+    implementation 'com.google.firebase:firebase-messaging:23.1.1'
 
     //TODO add the following 2 lines if you exclude io.reactivex from Instabug
     //implementation 'io.reactivex:rxjava:1.0.13'

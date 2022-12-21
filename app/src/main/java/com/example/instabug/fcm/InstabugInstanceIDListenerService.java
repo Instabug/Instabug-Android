@@ -1,27 +1,24 @@
 package com.example.instabug.fcm;
 
-import android.content.Intent;
+import androidx.annotation.NonNull;
 
-import com.google.firebase.iid.FirebaseInstanceIdService;
+import com.google.firebase.messaging.FirebaseMessagingService;
+import com.instabug.chat.Replies;
 
 /**
  * Created by vezikon on 6/27/16.
  */
-public class InstabugInstanceIDListenerService extends FirebaseInstanceIdService {
-
-    private static final String TAG = "InstabugInstanceIDLS";
+public class InstabugInstanceIDListenerService extends FirebaseMessagingService {
 
     /**
-     * Called if InstanceID token is updated. This may occur if the security of
-     * the previous token had been compromised. This call is initiated by the
-     * InstanceID provider.
+     * Called when a new token for the default Firebase project is generated.
+     * This is invoked after app install when a token is first generated, and again if the token changes.
+     *
+     * @param token – The token used for sending messages to this application instance. This token is the same as the one retrieved by FirebaseMessaging.getToken().
      */
-    // [START refresh_token]
     @Override
-    public void onTokenRefresh() {
-        // Fetch updated Instance ID token and notify our app's server of any changes (if applicable).
-        Intent intent = new Intent(this, RegistrationIntentService.class);
-        startService(intent);
+    public void onNewToken(@NonNull String token) {
+        super.onNewToken(token);
+        Replies.setPushNotificationRegistrationToken(token);
     }
-    // [END refresh_token]
 }
