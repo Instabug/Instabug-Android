@@ -12,7 +12,6 @@ import android.view.View;
 
 import com.example.instabug.BaseActivity;
 import com.example.instabug.R;
-import com.example.instabug.fcm.RegistrationIntentService;
 import com.instabug.bug.BugReporting;
 import com.instabug.featuresrequest.FeatureRequests;
 import com.instabug.library.Instabug;
@@ -42,18 +41,10 @@ public class MainActivity extends BaseActivity {
         //Instabug logs
         InstabugLog.d("MainActivity - Created");
 
-        registerFCM();
-
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         doNetworkRequest();
-    }
-
-    private void registerFCM() {
-        // Start IntentService to register this application with FCM.
-        Intent intent = new Intent(this, RegistrationIntentService.class);
-        startService(intent);
     }
 
     public void onShowLiveOnboardingMessageClicked(View view) {
