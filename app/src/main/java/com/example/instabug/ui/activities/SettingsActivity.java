@@ -13,6 +13,7 @@ import com.instabug.bug.BugReporting;
 import com.instabug.library.Instabug;
 import com.instabug.library.InstabugColorTheme;
 import com.instabug.library.invocation.InstabugInvocationEvent;
+import com.instabug.library.model.IBGTheme;
 import com.skydoves.colorpickerview.ColorEnvelope;
 import com.skydoves.colorpickerview.ColorPickerDialog;
 import com.skydoves.colorpickerview.listeners.ColorEnvelopeListener;
@@ -101,7 +102,7 @@ public class SettingsActivity extends BaseActivity {
                         new ColorEnvelopeListener() {
                             @Override
                             public void onColorSelected(ColorEnvelope envelope, boolean fromUser) {
-                                Instabug.setPrimaryColor(envelope.getColor());
+                                Instabug.setTheme(new IBGTheme.Builder().setPrimaryColor(envelope.getColor()).build());
                             }
                         })
                 .setNegativeButton(getString(android.R.string.cancel),
