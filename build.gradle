@@ -17,7 +17,7 @@ buildscript {
         mavenCentral()
         maven {
             // TODO add this only if interested in getting SNAPSHOT releases
-            url "https://oss.sonatype.org/content/repositories/snapshots"
+            url "https://central.sonatype.com/repository/maven-snapshots/"
         }
         maven { url "https://jitpack.io" }
 
