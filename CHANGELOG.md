@@ -1,6 +1,6 @@
 # Changelog
 
-## 16.0.0
+## 16.0.0 (Aug 4, 2025)
 
 - [Breaking Change] Removes deprecated APIs.
 - Adds support for detecting dialogs in our automatic Composable tracking approach.
