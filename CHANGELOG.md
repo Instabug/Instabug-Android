@@ -2,17 +2,31 @@
 
 ## 16.0.0 (Aug 4, 2025)
 
-- [Breaking Change] Removes deprecated APIs.
+### Breaking Changes
+
+- Removes deprecated APIs.
+
+### Features
+
 - Adds support for detecting dialogs in our automatic Composable tracking approach.
-- Adds a human-readable description to data sent with ANR reports for improved debugging.
-- Adds an API to control the screen-capturing delay for better customization.
-- Adds dynamic width support for the video recording hint bubble to accommodate longer localized text.
-- Migrated termination snapshot serialization from Java to JSON for improved reliability.
-- Fixes a UI glitch in the bug reporting screen making it scrollable to support long forms and accessibility needs.
+- Adds an API to control the screen-capturing delay for better customization. To set a custom screenshot capturing delay, the following API can be used
+```
+    // Can be used before building the SDK
+    Instabug.setScreenshotCaptureDelay(int delay)
+```
+
+### Enhancements
+
 - Optimizes console log retrieval for fatal crashes to avoid potential ANRs on low-end devices.
 - Optimizes Activity.onDestroy() logic to reduce chances of ANRs on low-end devices.
+- Migrated termination snapshot serialization from Java to JSON for improved reliability.
+- Adds a human-readable description to data sent with ANR reports for improved debugging.
+- Adds dynamic width support for the video recording hint bubble to accommodate longer localized text.
+
+### Bug Fixes
+
+- Fixes a UI glitch in the bug reporting screen making it scrollable to support long forms and accessibility needs.
 - Fixes a crash when using incompatible APM and Compose APM versions.
-- Various performance and security improvements.
 
 ## 15.0.2 (Jul 6, 2025)
 
