@@ -9,16 +9,16 @@
 ### Features
 
 - Adds support for detecting dialogs in our automatic Composable tracking approach.
-- Adds an API to control the screen-capturing delay for better customization. To set a custom screenshot capturing delay, the following API can be used
+- Adds an API to control the screen-capturing delay for better customization. The new API can be used as follows:
 ```
     // Can be used before building the SDK
-    Instabug.setScreenshotCaptureDelay(int delay)
+    Instabug.setScreenshotCaptureDelay(int delay) // Capturing delay in milliseconds
 ```
 
 ### Enhancements
 
 - Optimizes console log retrieval for fatal crashes to avoid potential ANRs on low-end devices.
-- Optimizes Activity.onDestroy() logic to reduce chances of ANRs on low-end devices.
+- Optimizes `Activity.onDestroy()` logic to reduce chances of ANRs on low-end devices.
 - Migrated termination snapshot serialization from Java to JSON for improved reliability.
 - Adds a human-readable description to data sent with ANR reports for improved debugging.
 - Adds dynamic width support for the video recording hint bubble to accommodate longer localized text.
